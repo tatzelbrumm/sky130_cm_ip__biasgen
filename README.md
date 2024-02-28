@@ -23,7 +23,7 @@ the matched transistors will be long and narrow.
 *Note any changes from the specification, such as if trim bits have been
 added.*
 
-##Circuit architecture
+## Circuit architecture
 
 Basically, matched current mirrors with dummy structures for matching.
 
