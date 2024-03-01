@@ -16,10 +16,11 @@ Email address: [*christoph.maier@ieee.org*](mailto:christoph.maier@ieee.org)
 
 In its simplest form, the bias generator will just be matched current sources/sinks.  
 To get good matching and good 1/f noise performance, 
-[the matched transistors will be long and narrow](https://bitbucket.org/cmucsd/analogdesignlecture/downloads/lecture.pdf).  
+ the matched transistors will be long and narrow  
+[[https://bitbucket.org/cmucsd/analogdesignlecture/downloads/lecture.pdf](https://bitbucket.org/cmucsd/analogdesignlecture/downloads/lecture.pdf)].  
   
 As compliance is not specified,   
-I will [play with cascoded or self-cascoded topologies](https://ieeexplore.ieee.org/document/6122459) to get good power supply rejection ratio.
+I will play with cascoded or self-cascoded topologies [[https://ieeexplore.ieee.org/document/6122459](https://ieeexplore.ieee.org/document/6122459)] to get good power supply rejection ratio.
   
 As size is not specified,  
 I will play with size to meet noise and matching specifications.  
@@ -42,9 +43,9 @@ added.*
 
 ## Circuit architecture
 
-Basically, [matched current mirrors with dummy structures for matching](https://bitbucket.org/cmucsd/analogdesignlecture/downloads/lecture.pdf).  
+Basically, matched current mirrors with dummy structures for matching [[https://bitbucket.org/cmucsd/analogdesignlecture/downloads/lecture.pdf](https://bitbucket.org/cmucsd/analogdesignlecture/downloads/lecture.pdf)].  
 If the current mirrors need to be switched individually,  
-I'll probably [use cascode transistors to double as switches [p.86]](https://github.com/tatzelbrumm/Zeugnisse/blob/master/PhD.pdf)  
+I'll probably use cascode transistors to double as switches [[https://github.com/tatzelbrumm/Zeugnisse/blob/master/PhD.pdf](https://github.com/tatzelbrumm/Zeugnisse/blob/master/PhD.pdf)], p.86  
   
 Probably, I'll design *two* current bias blocks,  
   
@@ -55,7 +56,8 @@ irrespective of whether they're actually going to be needed to meet any corporat
 (i.e., I just leave them out if the *official* specs don't require one of them).
   
 To generate common bias voltages for the matched cascoded current sources and/or sinks,
-I'll put in a [replica bias block](https://www.semanticscholar.org/paper/Ultra-High-Input-Impedance%2C-Low-Noise-Integrated-Chi-Maier/ab83669efb5f29a94e19b8e2c3f4801ab50ba3ea/figure/11)
+I'll put in a replica bias block  
+[[https://www.semanticscholar.org/paper/Ultra-High-Input-Impedance%2C-Low-Noise-Integrated-Chi-Maier/ab83669efb5f29a94e19b8e2c3f4801ab50ba3ea/figure/11](https://www.semanticscholar.org/paper/Ultra-High-Input-Impedance%2C-Low-Noise-Integrated-Chi-Maier/ab83669efb5f29a94e19b8e2c3f4801ab50ba3ea/figure/11)]
 
 ### External resources (if any) (all resources must be open source)
 
@@ -73,7 +75,11 @@ I will implement them as necessary.
 A bandgap voltage would be more effort than a PTAT [? &hellip; I generally know what birds do, but not their name] input current.  
 A digitally trimmed current mirror is less expensive to build than a digitally trimmed voltage-to-current converter.  
   
-Maybe I will cheat and design yet another of [my favorite Oguey&Aebischer](https://www.semanticscholar.org/paper/Ultra-High-Input-Impedance%2C-Low-Noise-Integrated-Chi-Maier/ab83669efb5f29a94e19b8e2c3f4801ab50ba3ea/figure/10) [bias block](https://github.com/MastellaM/sky130_TAC3/pull/3)s **with matching layout primitives**.  
+Maybe I will cheat and design yet another of my favorite Oguey&Aebischer bias blocks  
+[[https://www.semanticscholar.org/paper/Ultra-High-Input-Impedance%2C-Low-Noise-Integrated-Chi-Maier/ab83669efb5f29a94e19b8e2c3f4801ab50ba3ea/figure/10](https://www.semanticscholar.org/paper/Ultra-High-Input-Impedance%2C-Low-Noise-Integrated-Chi-Maier/ab83669efb5f29a94e19b8e2c3f4801ab50ba3ea/figure/10)],  
+[[https://github.com/MastellaM/sky130_TAC3/pull/3](https://github.com/MastellaM/sky130_TAC3/pull/3)]   
+**with matching layout primitives**.  
+
 In that case, all I need would be   
 
 * a digital input to switch off the building block  
@@ -103,7 +109,7 @@ be tested, and briefly describe the testbench circuit setup and how it
 measures the specified parameter.*  
   
 #### Answer for Mr. Potbox  
-[This](https://github.com/tatzelbrumm/sky130_TAC3/blob/main/playground/test_OgueyAebischerBias.sch), 
+This: [https://github.com/tatzelbrumm/sky130_TAC3/blob/main/playground/test_OgueyAebischerBias.sch](https://github.com/tatzelbrumm/sky130_TAC3/blob/main/playground/test_OgueyAebischerBias.sch), 
 with transient, ac, and Monte Carlo mismatch simulations added to any current outputs there may be in addition to the power rails.  
 
 #### Suitable answer for suits
@@ -128,7 +134,7 @@ capacitance, wirebond inductance, and wire resistance from pad to
 circuit may affect measurement, and how to mitigate. Note where the
 circuit may need to be placed as close as possible to a pad.*  
   
-Design something along the lines of a [74HC595](https://www.diodes.com/assets/Datasheets/74HC595.pdf) 
+Design something along the lines of a 74HC595 [[https://www.diodes.com/assets/Datasheets/74HC595.pdf](https://www.diodes.com/assets/Datasheets/74HC595.pdf)] 
 with as many bits as needed to shift in the digital control bits from inputs
 
 | pin    |
@@ -172,5 +178,5 @@ As time left after obtaining a stable design flow allows,
 I might extend the *"current bias"* block to include one or more reference circuits with startup and brown-out detection, a current DAC, and maybe even other blocks,
 just as long as no interface specification disrupts matching of basic layout elements and bias voltages that adapt to process and temperature variations.
 
-I'll consider all sorts of building blocks useful for an on-chip [potbox](http://opencircuitdesign.com/~tim/research/potbox/potbox.ps),  
-but [I won't promise I'll implement them](https://fossbytes.com/linus-torvaldss-famous-email-first-linux-announcement/).
+I'll consider all sorts of building blocks useful for an on-chip potbox [[http://opencircuitdesign.com/~tim/research/potbox/potbox.ps](http://opencircuitdesign.com/~tim/research/potbox/potbox.ps)],  
+but I won't promise I'll implement them [[https://fossbytes.com/linus-torvaldss-famous-email-first-linux-announcement/](https://fossbytes.com/linus-torvaldss-famous-email-first-linux-announcement/)].
