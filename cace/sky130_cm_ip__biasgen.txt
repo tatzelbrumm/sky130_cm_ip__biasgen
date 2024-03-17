@@ -1,0 +1,37 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name:		sky130_cm_ip__biasgen
+description:	bias current generator/distributor
+commit:		N/A
+PDK:		sky130A
+
+cace_format:	4.0
+
+authorship {
+	designer:	Christoph Maier
+	company:	
+	creation_date:	17 March 2024
+	license:	GNU GPL3v3
+}
+
+# Paths to various files
+
+paths {
+	root:		..
+	documentation:	doc
+	schematic:	xschem
+	magic:		mag
+	layout:		gds
+	netlist:	netlist
+	testbench:	cace
+	simulation:	ngspice
+	logs:		ngspice/log
+}
+
+# Project dependencies
+
+dependencies {
+}
+
