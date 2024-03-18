@@ -31,9 +31,9 @@ N 2010 -690 2120 -690 { lab=GND}
 N 2270 -1030 2270 -990 { lab=#net1}
 N 2270 -930 2270 -690 { lab=GND}
 C {sky130_fd_pr/nfet_03v3_nvt.sym} 2140 -750 0 0 {name=M1
-L=0.5
-W=1
-nf=1
+L=\{l\}
+W=\{w\}
+nf=\{nf\}
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -44,9 +44,9 @@ sa=0 sb=0 sd=0
 model=nfet_03v3_nvt
 spiceprefix=X
 }
-C {devices/vcvs.sym} 2160 -850 0 0 {name=Evgd value=-1000}
-C {devices/isource.sym} 2160 -960 0 1 {name=Id value=10n}
-C {devices/vsource.sym} 2010 -780 0 1 {name=Vdref value=0.2}
+C {devices/vcvs.sym} 2160 -850 0 0 {name=Evgd value=\{-egain\}}
+C {devices/isource.sym} 2160 -960 0 1 {name=Id value=\{id\}}
+C {devices/vsource.sym} 2010 -780 0 1 {name=Vdref value=\{vdref\}}
 C {devices/gnd.sym} 2120 -670 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} 2070 -840 0 0 {name=l2 sig_type=std_logic lab=Vg}
 C {devices/lab_pin.sym} 2100 -810 0 0 {name=l3 sig_type=std_logic lab=Vd}
@@ -60,14 +60,14 @@ value="
 
 "
 spice_ignore=false}
-C {devices/code_shown.sym} 1700 -1290 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
+C {devices/code_shown.sym} 1700 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
 .control
 save all
 dc Id 10n 10u 10n
 plot Vg vs all.Vidsense#branch
-* dc vd 0 1.8 0.01 vg 0 1.2 0.1
+*dc vd 0 1.8 0.01 vg 0 1.2 0.1
 *plot all.vd1#branch vs D1v8
 *plot all.vd2#branch vs D1v8
 *save @m.xm1.msky130_fd_pr__nfet_03v3[gm]
@@ -76,3 +76,11 @@ write nfet_03v3_gmtest.raw
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
+C {devices/code_shown.sym} 2040 -1430 0 0 {name=params only_toplevel=false value="
+.param id     = 10n
+.param vdref  = 200m
+.param l      = 0.5
+.param w      = 1
+.param nf     = 1
+.param egain  = 1000
+"}
