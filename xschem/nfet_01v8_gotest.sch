@@ -46,7 +46,7 @@ value="
 
 "
 spice_ignore=false}
-C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
+C {devices/code_shown.sym} 1440 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
 .dc Vdref \{vdmin\} \{vdmax\} \{vdinc\} Id \{imin\} \{imax\} \{iinc\}
@@ -58,11 +58,23 @@ let gm_go = -deriv(Vd)/deriv(Vg)
 plot dVd vs Vdref
 plot Vg vs Vd
 plot gm_go vs Vd
+remzerovec
+write nfet_01v8_gotest.raw
+alterparam l=0.2
+reset
+set appendwrite
+run
+let dVd = Vd-Vdref
+let gm_go = -deriv(Vd)/deriv(Vg)
+plot dVd vs Vdref
+plot Vg vs Vd
+plot gm_go vs Vd
+remzerovec
 write nfet_01v8_gotest.raw
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
-C {devices/code_shown.sym} 1660 -1430 0 0 {name=params only_toplevel=false value="* device parameters
+C {devices/code_shown.sym} 2110 -1430 0 0 {name=params only_toplevel=false value="* device parameters
 .param id     = 10n
 .param vdref  = 200m
 .param l      = 0.5
