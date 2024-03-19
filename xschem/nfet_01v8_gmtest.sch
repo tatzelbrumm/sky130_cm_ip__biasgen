@@ -51,24 +51,19 @@ C {devices/code_shown.sym} 1700 -1430 0 0 {name=NGSPICE only_toplevel=true value
 .option savecurrents
 .control
 save all
-dc Id 10n 10u 10n
+dc Id 10n 10u 10n Vdref 100m 400m 100m
 plot Vg vs all.Vidsense#branch
-*dc vd 0 1.8 0.01 vg 0 1.2 0.1
-*plot all.vd1#branch vs D1v8
-*plot all.vd2#branch vs D1v8
-*save @m.xm1.msky130_fd_pr__nfet_03v3[gm]
-*op
 write nfet_01v8_gmtest.raw
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
-C {devices/code_shown.sym} 2040 -1430 0 0 {name=params only_toplevel=false value="
+C {devices/code_shown.sym} 2180 -1430 0 0 {name=params only_toplevel=false value="* device parameters
 .param id     = 10n
 .param vdref  = 200m
 .param l      = 0.5
 .param w      = 1
 .param nf     = 1
-.param egain  = 1000
+.param egain  = 1meg
 "}
 C {sky130_fd_pr/nfet_01v8.sym} 2140 -750 0 0 {name=M1
 L=\{l\}
