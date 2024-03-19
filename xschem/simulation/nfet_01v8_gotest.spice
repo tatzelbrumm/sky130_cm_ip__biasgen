@@ -20,9 +20,11 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 .control
 save all
 run
-plot Vd-Vdref vs Vdref
+let dVd = Vd-Vdref
+let gm_go = -deriv(Vd)/deriv(Vg)
+plot dVd vs Vdref
 plot Vg vs Vd
-plot -deriv(Vd)/deriv(Vg) vs Vd
+plot gm_go vs Vd
 write nfet_01v8_gotest.raw
 .endc
 
