@@ -57,7 +57,7 @@ let gm = deriv(all.Vidsense#branch)/deriv(Vg)
 let gm_id = gm/all.Vidsense#branch
 plot Vg vs all.Vidsense#branch
 plot gm vs all.Vidsense#branch
-plot xlog deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs all.Vidsense#branch
+plot xlog gm_id vs all.Vidsense#branch
 write nfet_01v8_gmtest.raw
 .endc
 " }
