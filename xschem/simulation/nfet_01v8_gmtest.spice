@@ -18,25 +18,20 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 .option savecurrents
 .control
 save all
-dc Id 10n 10u 10n
+dc Id 10n 10u 10n Vdref 100m 400m 100m
 plot Vg vs all.Vidsense#branch
-*dc vd 0 1.8 0.01 vg 0 1.2 0.1
-*plot all.vd1#branch vs D1v8
-*plot all.vd2#branch vs D1v8
-*save @m.xm1.msky130_fd_pr__nfet_03v3[gm]
-*op
 write nfet_01v8_gmtest.raw
 .endc
 
 
 
-
+* device parameters
 .param id     = 10n
 .param vdref  = 200m
 .param l      = 0.5
 .param w      = 1
 .param nf     = 1
-.param egain  = 1000
+.param egain  = 1meg
 
 
 **** end user architecture code
