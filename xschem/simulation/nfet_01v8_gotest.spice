@@ -16,9 +16,10 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 * simulation directives
 .option wnflag=1
 .option savecurrents
+.dc Vdref {vdmin} {vdmax} {vdinc} Id {imin} {imax} {iinc}
 .control
 save all
-dc Vdref 1m 2 1m
+run
 plot Vd-Vdref vs Vdref
 plot Vg vs Vd
 plot -deriv(Vd)/deriv(Vg) vs Vd
@@ -34,6 +35,13 @@ write nfet_01v8_gotest.raw
 .param w      = 1
 .param nf     = 1
 .param egain  = 100k
+* simulation parameters
+.param vdmin     = 1m
+.param vdmax     = 2
+.param vdinc     = 1m
+.param imin      = 10n
+.param imax      = 40n
+.param iinc      = 10n
 
 
 **** end user architecture code
