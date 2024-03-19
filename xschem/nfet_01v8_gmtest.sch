@@ -46,18 +46,20 @@ value="
 
 "
 spice_ignore=false}
-C {devices/code_shown.sym} 1700 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
+C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
 .control
 save all
-dc Id 10n 10u 10n Vdref 100m 400m 100m
+dc Id 1n 10u 1n Vdref 100m 400m 100m
 plot Vg vs all.Vidsense#branch
+plot deriv(all.Vidsense#branch)/deriv(Vg) vs all.Vidsense#branch
+plot deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs log(all.Vidsense#branch)
 write nfet_01v8_gmtest.raw
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
-C {devices/code_shown.sym} 2180 -1430 0 0 {name=params only_toplevel=false value="* device parameters
+C {devices/code_shown.sym} 1660 -1430 0 0 {name=params only_toplevel=false value="* device parameters
 .param id     = 10n
 .param vdref  = 200m
 .param l      = 0.5
