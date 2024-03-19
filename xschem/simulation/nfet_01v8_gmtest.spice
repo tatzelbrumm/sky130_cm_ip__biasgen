@@ -18,8 +18,10 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 .option savecurrents
 .control
 save all
-dc Id 10n 10u 10n Vdref 100m 400m 100m
+dc Id 1n 10u 1n Vdref 100m 400m 100m
 plot Vg vs all.Vidsense#branch
+plot deriv(all.Vidsense#branch)/deriv(Vg) vs all.Vidsense#branch
+plot deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs log(all.Vidsense#branch)
 write nfet_01v8_gmtest.raw
 .endc
 
