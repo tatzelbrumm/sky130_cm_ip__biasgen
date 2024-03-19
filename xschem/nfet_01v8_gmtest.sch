@@ -46,23 +46,35 @@ value="
 
 "
 spice_ignore=false}
-C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
+C {devices/code_shown.sym} 1540 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
 .dc Id \{imin\} \{imax\} \{iinc\} Vdref \{vdmin\} \{vdmax\} \{vdinc\}
 .control
 save all
 run
-let gm = deriv(all.Vidsense#branch)/deriv(Vg)
-let gm_id = gm/all.Vidsense#branch
-plot Vg vs all.Vidsense#branch
-plot gm vs all.Vidsense#branch
-plot xlog gm_id vs all.Vidsense#branch
+let gm = deriv(Vidsense#branch)/deriv(Vg)
+let gm_id = gm/Vidsense#branch
+plot Vg vs Vidsense#branch
+plot gm vs Vidsense#branch
+plot xlog gm_id vs Vidsense#branch
+remzerovec
+write nfet_01v8_gotest.raw
+alterparam l=0.2
+reset
+set appendwrite
+run
+let gm = deriv(Vidsense#branch)/deriv(Vg)
+let gm_id = gm/Vidsense#branch
+plot Vg vs Vidsense#branch
+plot gm vs Vidsense#branch
+plot xlog gm_id vs Vidsense#branch
+remzerovec
 write nfet_01v8_gmtest.raw
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
-C {devices/code_shown.sym} 1660 -1430 0 0 {name=params only_toplevel=false value="* device parameters
+C {devices/code_shown.sym} 2100 -1430 0 0 {name=params only_toplevel=false value="* device parameters
 .param id     = 10n
 .param vdref  = 200m
 .param l      = 0.5
