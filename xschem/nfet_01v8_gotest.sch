@@ -53,9 +53,11 @@ C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value
 .control
 save all
 run
-plot Vd-Vdref vs Vdref
+let dVd = Vd-Vdref
+let gm_go = -deriv(Vd)/deriv(Vg)
+plot dVd vs Vdref
 plot Vg vs Vd
-plot -deriv(Vd)/deriv(Vg) vs Vd
+plot gm_go vs Vd
 write nfet_01v8_gotest.raw
 .endc
 " }

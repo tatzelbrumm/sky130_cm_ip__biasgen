@@ -53,8 +53,10 @@ C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value
 .control
 save all
 run
+let gm = deriv(all.Vidsense#branch)/deriv(Vg)
+let gm_id = gm/all.Vidsense#branch
 plot Vg vs all.Vidsense#branch
-plot deriv(all.Vidsense#branch)/deriv(Vg) vs all.Vidsense#branch
+plot gm vs all.Vidsense#branch
 plot xlog deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs all.Vidsense#branch
 write nfet_01v8_gmtest.raw
 .endc
