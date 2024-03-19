@@ -49,9 +49,10 @@ spice_ignore=false}
 C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
+.dc Vdref \{vdmin\} \{vdmax\} \{vdinc\} Id \{imin\} \{imax\} \{iinc\}
 .control
 save all
-dc Vdref 1m 2 1m
+run
 plot Vd-Vdref vs Vdref
 plot Vg vs Vd
 plot -deriv(Vd)/deriv(Vg) vs Vd
@@ -66,6 +67,13 @@ C {devices/code_shown.sym} 1660 -1430 0 0 {name=params only_toplevel=false value
 .param w      = 1
 .param nf     = 1
 .param egain  = 100k
+* simulation parameters
+.param vdmin     = 1m
+.param vdmax     = 2
+.param vdinc     = 1m
+.param imin      = 10n
+.param imax      = 40n
+.param iinc      = 10n
 "}
 C {sky130_fd_pr/nfet_01v8.sym} 2140 -750 0 0 {name=M1
 L=\{l\}

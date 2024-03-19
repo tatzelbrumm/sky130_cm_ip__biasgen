@@ -49,9 +49,10 @@ spice_ignore=false}
 C {devices/code_shown.sym} 1980 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
+.dc Id \{imin\} \{imax\} \{iinc\} Vdref \{vdmin\} \{vdmax\} \{vdinc\}
 .control
 save all
-dc Id 1n 10u 1n Vdref 100m 400m 100m
+run
 plot Vg vs all.Vidsense#branch
 plot deriv(all.Vidsense#branch)/deriv(Vg) vs all.Vidsense#branch
 plot xlog deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs all.Vidsense#branch
@@ -66,6 +67,13 @@ C {devices/code_shown.sym} 1660 -1430 0 0 {name=params only_toplevel=false value
 .param w      = 1
 .param nf     = 1
 .param egain  = 1meg
+* simulation parameters
+.param imin      = 1n
+.param imax      = 10u
+.param iinc      = 1n
+.param vdmin     = 100m
+.param vdmax     = 400m
+.param vdinc     = 100m
 "}
 C {sky130_fd_pr/nfet_01v8.sym} 2140 -750 0 0 {name=M1
 L=\{l\}
