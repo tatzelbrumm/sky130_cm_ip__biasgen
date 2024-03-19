@@ -20,8 +20,10 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 .control
 save all
 run
+let gm = deriv(all.Vidsense#branch)/deriv(Vg)
+let gm_id = gm/all.Vidsense#branch
 plot Vg vs all.Vidsense#branch
-plot deriv(all.Vidsense#branch)/deriv(Vg) vs all.Vidsense#branch
+plot gm vs all.Vidsense#branch
 plot xlog deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs all.Vidsense#branch
 write nfet_01v8_gmtest.raw
 .endc
