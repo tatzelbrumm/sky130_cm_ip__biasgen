@@ -21,7 +21,7 @@ save all
 dc Id 1n 10u 1n Vdref 100m 400m 100m
 plot Vg vs all.Vidsense#branch
 plot deriv(all.Vidsense#branch)/deriv(Vg) vs all.Vidsense#branch
-plot deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs log(all.Vidsense#branch)
+plot xlog deriv(all.Vidsense#branch)/(deriv(Vg)*all.Vidsense#branch) vs all.Vidsense#branch
 write nfet_01v8_gmtest.raw
 .endc
 
