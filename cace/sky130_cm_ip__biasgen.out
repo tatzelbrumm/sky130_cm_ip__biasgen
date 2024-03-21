@@ -11,7 +11,7 @@ authorship {
 	designer:	Christoph Maier
 	company:	
 	creation_date:	17 March 2024
-	modification_date:	March 21, 2024 at 03:31am
+	modification_date:	March 21, 2024 at 05:09pm
 	license:	GNU GPL3v3
 }
 
@@ -40,15 +40,15 @@ dependencies {
 # Pin names and descriptions
 
 pins {
-	name:		vdd
+	name:		avdd
 	description:	Positive power supply
 	type:		power
 	direction:	inout
 	Vmin:		0
-	Vmax:		2.1
+	Vmax:		6
 
 	+
-	name:		vss
+	name:		avss
 	description:	Ground
 	type:		ground
 	direction:	inout
@@ -56,7 +56,15 @@ pins {
 	Vmax:		0.3
 
 	+
-	name:		vbp
+	name:		Ibin
+	description:	input bias current
+	type:		analog
+	direction:	inout
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		Vbp
 	description:	PMOS bias voltage
 	type:		analog
 	direction:	inout
@@ -64,16 +72,16 @@ pins {
 	Vmax:		avdd + 0.3
 
 	+
-	name:		vbn
-	description:	NMOS bias voltage
+	name:		Vbc
+	description:	PMOS cascode voltage
 	type:		analog
 	direction:	inout
 	Vmin:		avss - 0.3
 	Vmax:		avdd + 0.3
 
 	+
-	name:		vbr
-	description:	Resistor bias voltage
+	name:		Iout
+	description:	output current
 	type:		analog
 	direction:	inout
 	Vmin:		avss - 0.3
@@ -96,6 +104,19 @@ default_conditions {
 	display:	vdref
 	unit:		mV
 	typical:	200
+
+	+
+	name:		temperature
+	description:	Ambient temperature
+	display:	temp
+	unit:		{degrees}C
+	typical:	27
+
+	+
+	name:		corner
+	description:	Process corner
+	display:	corner
+	typical:	tt
 }
 
 # List of electrical parameters to be measured and their specified limits
@@ -128,10 +149,14 @@ electrical_parameters {
 
 		+
 		name:		temperature
-		typical:	27
+		minimum:	-40
+		typical:	25
+		maximum:	85
 
 		+
 		name:		corner
+		minimum:	ss
 		typical:	tt
+		maximum:	ff
 	}
 }

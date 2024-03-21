@@ -15,6 +15,12 @@ Diagnostic:  Starting dictionary of simulate
 Diagnostic:  Returning to list
 Diagnostic:  Starting list of conditions
 Diagnostic:  Returning to list
+Diagnostic:  Starting dictionary of simulate
+Diagnostic:  Returning to list
+Diagnostic:  Starting dictionary of plot
+Diagnostic:  Returning to list
+Diagnostic:  Starting list of variables
+Diagnostic:  Returning to list
 Diagnostic:  Starting list of conditions
 Diagnostic:  Returning to list
 Diagnostic:  Returning to dictionary
@@ -43,6 +49,15 @@ Launching Simulations
 Skipping parameter Vg (no testbenches).
 Collating results
 Parameter Vg skipped for evaluation.
+Evaluating electrical parameter Vg_plot
+Generating simulation files for parameter Vg_plot
+No SPICE netlist exists at /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/netlist/rcx/sky130_cm_ip__biasgen.spice and no verilog path exists.
+This is an error condition.
+Launching Simulations
+Skipping parameter Vg_plot (no testbenches).
+Plotting results
+cace_run_eparam failed with exception:
+'testbenches'
 cace_run_all_[e|p]param failed with exception:
 'physical_parameters'
 Done with CACE simulations and evaluations.
