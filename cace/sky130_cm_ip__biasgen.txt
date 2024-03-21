@@ -129,14 +129,6 @@ electrical_parameters {
 		format:		ascii .data null result
 	}
 	conditions {
-		name: iterations
-		typical: 10
-
-		+
-		name: output_option
-		typical: 1
-	}
-	conditions {
 		name: id
 		minimum: 1
 		typical: 10
@@ -157,6 +149,41 @@ electrical_parameters {
 		minimum: ss
 		typical: tt
 		maximum: ff
+	}
++
+	name:			Vg_plot
+	description:	Gate voltage vs. drain current
+	display:		Vg vs. Id
+	unit:			V
+	simulate {
+		tool:		ngspice
+		template:	tb_nfet_01v8_gmtest.spice
+		format:		ascii .data Id Vg
+	}
+	plot {
+		filename: Vg_vs_Id.png
+		xaxis: Id
+		yaxis: Vg
+	}
+	variables {
+		name: Id
+		display: Drain current
+		unit: nA
+
+		+
+		name: Vg
+		display: Gate Voltage
+		unit: V
+	}
+	conditions {
+		name: id
+		minimum: 1
+		typical: 10
+		maximum: 10000
+
+		+
+		name: vdref
+		typical: 200
 	}
 }
 
