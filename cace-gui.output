@@ -2,12 +2,11 @@ Setting datasheet to cace/sky130_cm_ip__biasgen.txt
 Working directory set to cace/.. (/home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen)
 Simulating parameter Vg
 Checking for out-of-date schematic-captured netlists.
-Error:  symbol for project sky130_cm_ip__biasgen was not found!
+Forcing regeneration of schematic-captured netlist.
+Generating simulation netlist from schematic. . .
+Calling xschem to generate netlist
 Checking for out-of-date testbench netlist tb_nfet_01v8_gmtest.spice.
 Evaluating electrical parameter Vg
-Pins in schematic: []
-Pins in datasheet: vdd vss vbp vbn vbr 
-File ./netlist/schematic/sky130_cm_ip__biasgen.spice subcircuit sky130_cm_ip__biasgen does not have expected pins!
 Error:  Unknown/unhandled condition name "-egain"
 Error:  Unknown/unhandled condition name "l"
 Error:  Unknown/unhandled condition name "nf"
@@ -44,9 +43,9 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
  Reference value :  1.00000e-09
- Reference value :  3.38500e-06
- Reference value :  6.59300e-06
- Reference value :  9.94500e-06
+ Reference value :  3.15000e-06
+ Reference value :  5.98700e-06
+ Reference value :  9.24100e-06
 No. of Data Rows : 10000
 binary raw file "nfet_01v8_gotest.raw"
 ngspice-42 done
