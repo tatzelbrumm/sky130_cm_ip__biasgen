@@ -1,24 +1,38 @@
 ** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_ip__biasgen.sch
-.subckt sky130_cm_ip__biasgen vdd vbp vbn vbr vss
-*.PININFO vss:B vdd:B vbp:B vbn:B vbr:B
-XM10 net3 vbn vres vss sky130_fd_pr__nfet_01v8 L=1 W=1 nf=1 m=4
-XM12 vbp vbp vdd vdd sky130_fd_pr__pfet_01v8 L=1 W=1 nf=1 m=1
-XM11 vbn vbn vss vss sky130_fd_pr__nfet_01v8 L=1 W=1 nf=1 m=1
-XM13 net2 vbp vdd vdd sky130_fd_pr__pfet_01v8 L=1 W=1 nf=1 m=4
-XM14 net1 vbp vdd vdd sky130_fd_pr__pfet_01v8 L=1 W=1 nf=1 m=2
-XM16 vres vbr net5 vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-XM15 vbr vbr net4 vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-Vi1 vbp net3 0
-.save i(vi1)
-Vi4 net2 vbn 0
-.save i(vi4)
-Viaux net1 vbr 0
-.save i(viaux)
-XM18 net5 vbr net6 vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-XM17 net4 vbr net7 vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-XM20 net6 vbr net9 vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-XM19 net7 vbr net8 vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-XM22 net9 vbr vss vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
-XM21 net8 vbr vss vss sky130_fd_pr__nfet_01v8 L=20 W=1 nf=1 m=1
+.subckt sky130_cm_ip__biasgen avdd Vpb Vpc Iout Ibin avss
+*.PININFO avss:B avdd:B Ibin:B Vpb:B Vpc:B Iout:B
+XMc1 Vpb Vpc vd1 avdd sky130_fd_pr__pfet_g5v0d10v5 L={lc} W={wc} nf={nfc} m=1
+XM1 vd1 Vpb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={l} W={w} nf={nf} m=1
+XMc2 Iout Vpc vd2 avdd sky130_fd_pr__pfet_g5v0d10v5 L={lc} W={wc} nf={nfc} m=1
+XM2 vd2 Vpb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={l} W={w} nf={nf} m=1
+XMc3 Vpc Vpc avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={lb} W={wb} nf={nfb} m=1
+XMn1 Ibin Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={ln} W={wn} nf={nfn} m=1
+XMn2 Vpc Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={ln} W={wn} nf={nfn} m=1
+XMn3 Vpb Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={ln} W={wn} nf={nfn} m=1
+**** begin user architecture code
+
+* device parameters
+.param id     = 10n
+.param vdref  = 200m
+.param l      = 0.15
+.param w      = 1
+.param nf     = 1
+.param lc     = 0.5
+.param wc     = 1
+.param nfc    = 1
+.param lb     = 0.5
+.param wb     = 1
+.param nfb    = 1
+.param ln     = 0.5
+.param wn     = 1
+.param nfn    = 1
+.param egain  = 10000
+* simulation parameters
+.param imin      = 1n
+.param imax      = 10u
+.param iinc      = 1n
+
+
+**** end user architecture code
 .ends
 .end
