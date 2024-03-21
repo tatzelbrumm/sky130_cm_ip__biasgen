@@ -1,0 +1,57 @@
+Diagnostic:  Starting dictionary of authorship
+Diagnostic:  Returning to dictionary
+Diagnostic:  Starting dictionary of paths
+Diagnostic:  Returning to dictionary
+Diagnostic:  Starting dictionary of dependencies
+Diagnostic:  Returning to dictionary
+Diagnostic:  Starting list of pins
+Diagnostic:  Returning to dictionary
+Diagnostic:  Starting list of default_conditions
+Diagnostic:  Returning to dictionary
+Diagnostic:  Starting list of electrical_parameters
+Diagnostic:  Starting dictionary of spec
+Diagnostic:  Returning to list
+Diagnostic:  Starting dictionary of simulate
+Diagnostic:  Returning to list
+Diagnostic:  Starting list of conditions
+Diagnostic:  Returning to list
+Diagnostic:  Starting list of conditions
+Diagnostic:  Returning to list
+Diagnostic:  Returning to dictionary
+Working directory set to project root at /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+Forcing regeneration of parasitic-extracted netlist.
+Error:  No netlist or layout for project sky130_cm_ip__biasgen.
+(layout master file mag/sky130_cm_ip__biasgen.mag not found.)
+
+Forcing regeneration of layout-extracted netlist.
+Error:  No netlist or layout for project sky130_cm_ip__biasgen.
+(layout master file mag/sky130_cm_ip__biasgen.mag not found.)
+
+Forcing regeneration of schematic-captured netlist.
+Generating simulation netlist from schematic. . .
+Calling xschem to generate netlist
+Executing: xschem -n -s -r -x -q --tcl set lvs_netlist 1 ; append XSCHEM_LIBRARY_PATH :/home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen ; append XSCHEM_LIBRARY_PATH :netlist/schematic --rcfile /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc -o netlist/schematic -N sky130_cm_ip__biasgen.spice xschem/sky130_cm_ip__biasgen.sch
+CWD is /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+Generating testbench netlist tb_nfet_01v8_gmtest.spice from schematic. . .
+Calling xschem to generate netlist
+Executing: xschem -n -s -r -x -q --tcl append XSCHEM_LIBRARY_PATH :/home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen ; append XSCHEM_LIBRARY_PATH :cace --rcfile /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc -o cace -N tb_nfet_01v8_gmtest.spice cace/tb_nfet_01v8_gmtest.sch
+Evaluating electrical parameter Vg
+Generating simulation files for parameter Vg
+No SPICE netlist exists at /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/netlist/rcx/sky130_cm_ip__biasgen.spice and no verilog path exists.
+This is an error condition.
+Launching Simulations
+Skipping parameter Vg (no testbenches).
+Collating results
+Parameter Vg skipped for evaluation.
+cace_run_all_[e|p]param failed with exception:
+'physical_parameters'
+Done with CACE simulations and evaluations.
+Writing final output file cace/sky130_cm_ip__biasgen.out
+Diagnostic: Adding item with unrecognized key reports in dictionary paths
+
+CACE Summary of results:
+------------------------
+Electrical parameter Vg
+   Gate voltage
+   Vg
+   (No results to report)

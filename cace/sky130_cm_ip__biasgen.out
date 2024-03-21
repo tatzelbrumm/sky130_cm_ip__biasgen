@@ -1,0 +1,137 @@
+#---------------------------------------------------
+# CACE format 4.0 characterization file cace/sky130_cm_ip__biasgen.out
+#---------------------------------------------------
+
+name:		sky130_cm_ip__biasgen
+description:	bias current generator/distributor
+commit:		N/A
+PDK:		sky130A
+cace_format:	4.0
+authorship {
+	designer:	Christoph Maier
+	company:	
+	creation_date:	17 March 2024
+	modification_date:	March 21, 2024 at 03:31am
+	license:	GNU GPL3v3
+}
+
+# Paths to various files
+
+paths {
+	root:		/home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+	documentation:	doc
+	schematic:	xschem
+	layout:		gds
+	magic:		mag
+	netlist:	netlist
+	testbench:	cace
+	simulation:	ngspice
+	plots:		plots
+	logs:		ngspice/log
+
+	reports:	reports
+}
+
+# Project dependencies
+
+dependencies {
+}
+
+# Pin names and descriptions
+
+pins {
+	name:		vdd
+	description:	Positive power supply
+	type:		power
+	direction:	inout
+	Vmin:		0
+	Vmax:		2.1
+
+	+
+	name:		vss
+	description:	Ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+
+	+
+	name:		vbp
+	description:	PMOS bias voltage
+	type:		analog
+	direction:	inout
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		vbn
+	description:	NMOS bias voltage
+	type:		analog
+	direction:	inout
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		vbr
+	description:	Resistor bias voltage
+	type:		analog
+	direction:	inout
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+}
+
+# Default values for electrical parameter measurement conditions
+# if not otherwise specified
+
+default_conditions {
+	name:		id
+	description:	Drain current
+	display:	id
+	unit:		nA
+	typical:	10
+
+	+
+	name:		vdref
+	description:	Drain voltage
+	display:	vdref
+	unit:		mV
+	typical:	200
+}
+
+# List of electrical parameters to be measured and their specified limits
+
+electrical_parameters {
+	name:		Vg
+	status:		active
+	description:	Gate voltage
+	display:	Vg
+	unit:		mV
+	spec {
+		minimum:	500
+		typical:	700
+		maximum:	900 fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	tb_nfet_01v8_gmtest.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name:		id
+		minimum:	1
+		typical:	10
+		maximum:	10000
+
+		+
+		name:		vdref
+		typical:	200
+
+		+
+		name:		temperature
+		typical:	27
+
+		+
+		name:		corner
+		typical:	tt
+	}
+}
