@@ -27,7 +27,7 @@ plot Vg vs Vd
 plot gm_go vs Vd
 remzerovec
 write pfet_g5v0d10v5_gotest.raw
-alterparam l=0.2
+alterparam l=0.5
 reset
 set appendwrite
 run
@@ -45,12 +45,12 @@ write pfet_g5v0d10v5_gotest.raw
 * device parameters
 .param id     = 10n
 .param vdref  = 200m
-.param l      = 0.5
-.param w      = 1
+.param l      = 8
+.param w      = 2
 .param nf     = 1
 .param egain  = 100k
 * simulation parameters
-.param vdmin     = 1m
+.param vdmin     = 20m
 .param vdmax     = 2
 .param vdinc     = 1m
 .param imin      = 10n
