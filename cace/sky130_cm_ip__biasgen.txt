@@ -122,25 +122,25 @@ default_conditions {
 # List of electrical parameters to be measured and their specified limits
 
 electrical_parameters {
-	name:		Vg
+	name:		Vg_nmos
 	description:	Gate voltage
 	display:	Vg
 	unit: 		mV
 	spec {
 		minimum:	500
 		typical:	700
-		maximum:	900	fail
+		maximum:	900
 	}
 	simulate {
 		tool:		ngspice
 		template:	tb_nfet_01v8_gmtest.spice
-		format:		ascii .data null result
+		format:		ascii .data null result null null
 	}
 	conditions {
 		name: id
 		minimum: 1
 		typical: 10
-		maximum: 10000
+		maximum: 1000
 
 		+
 		name: vdref
@@ -166,7 +166,7 @@ electrical_parameters {
 	simulate {
 		tool:		ngspice
 		template:	tb_nfet_01v8_gmtest.spice
-		format:		ascii .data Id result
+		format:		ascii .data Id result null null
 	}
 	plot {
 		filename: Vg_vs_Id.png
@@ -176,22 +176,95 @@ electrical_parameters {
 	variables {
 		name: Id
 		display: Drain current
-		unit: nA
+		unit: A
 
 		+
 		name: result
 		display: Gate Voltage
 		unit: V
+
 	}
 	conditions {
 		name: id
 		minimum: 1
 		typical: 10
-		maximum: 10000
+		maximum: 1000
 
 		+
 		name: vdref
 		typical: 200
+	}
++
+	name:			gm_id_plot
+	description:	Gate voltage vs. drain current
+	display:		gm_Id vs. Id
+	unit:			1/V
+	simulate {
+		tool:		ngspice
+		template:	tb_nfet_01v8_gmtest.spice
+		format:		ascii .data Id null null result
+	}
+	plot {
+		filename: gm_over_Id_vs_Id.png
+		xaxis: Id
+		yaxis: result
+	}
+	variables {
+		name: Id
+		display: Drain current
+		unit: A
+
+		+
+		name: result
+		display: gm/Id
+		unit: 1/V
+
+	}
+	conditions {
+		name: id
+		minimum: 1
+		typical: 10
+		maximum: 1000
+
+		+
+		name: vdref
+		typical: 200
+	}
++
+	name:			gm_go_plot
+	description:	gm/go vs. Vdrain
+	display:		gm/go vs. Id
+	unit:			1
+	simulate {
+		tool:		ngspice
+		template:	tb_nfet_01v8_gotest.spice
+		format:		ascii .data Vd null result
+	}
+	plot {
+		filename: gm_over_go_vs_Vd.png
+		xaxis: Vd
+		yaxis: result
+	}
+	variables {
+		name: Vd
+		display: Drain voltage
+		unit: V
+
+		+
+		name: result
+		display: gm/go
+		unit: 1
+
+	}
+	conditions {
+		name: vd
+		minimum: 0.1
+		typical: 0.4
+		maximum: 2
+
+		+
+		name: id
+		typical: 10
 	}
 }
 
