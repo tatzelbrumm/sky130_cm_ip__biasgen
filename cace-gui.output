@@ -43,18 +43,11 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
- Reference value :  1.00000e-05
-Error: argument out of range for divide
-  in term: deriv(vidsense#branch)/deriv(vg)
-
-Error: Can't evaluate "deriv(vidsense#branch)/deriv(vg)"
-Warning from checkvalid: vector gm is not available or has zero length.
-Error: RHS "gm/vidsense#branch" invalid
-Warning, (new) x axis seems to have one data point only
-Error: no such vector gm
-Error: no such vector gm_id
-
-No. of Data Rows : 1
+ Reference value :  1.00000e-09
+ Reference value :  3.38500e-06
+ Reference value :  6.59300e-06
+ Reference value :  9.94500e-06
+No. of Data Rows : 10000
 binary raw file "nfet_01v8_gotest.raw"
 ngspice-42 done
 Error:  No output file ngspice/Vg_1.data from simulation!
