@@ -40,15 +40,15 @@ dependencies {
 # Pin names and descriptions
 
 pins {
-	name:		vdd
+	name:		avdd
 	description:	Positive power supply
 	type:		power
 	direction:	inout
 	Vmin:		0
-	Vmax:		2.1
+	Vmax:		6
 
  	+
-	name:		vss
+	name:		avss
 	description:	Ground
 	type:		ground
 	direction:	inout
@@ -56,7 +56,15 @@ pins {
 	Vmax:		0.3
 
 	+
-	name:		vbp
+	name:		Ibin
+	description:	input bias current
+	type:		analog
+	direction:	inout
+	Vmin:		avss - 0.3
+	Vmax:		avdd + 0.3
+
+	+
+	name:		Vbp
 	description:	PMOS bias voltage
 	type:		analog
 	direction:	inout
@@ -64,16 +72,16 @@ pins {
 	Vmax:		avdd + 0.3
 
 	+
-	name:		vbn
-	description:	NMOS bias voltage
+	name:		Vbc
+	description:	PMOS cascode voltage
 	type:		analog
 	direction:	inout
 	Vmin:		avss - 0.3
 	Vmax:		avdd + 0.3
 
 	+
-	name:		vbr
-	description:	Resistor bias voltage
+	name:		Iout
+	description:	output current
 	type:		analog
 	direction:	inout
 	Vmin:		avss - 0.3
