@@ -1,5 +1,5 @@
-** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
-**.subckt tb_nfet_01v8_gmtest
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gotest.sch
+**.subckt tb_nfet_01v8_gotest
 Evgd Vg Vd Vdref Vd {-egain}
 Id net1 Vg {id}
 Vdref Vdref GND {vdref}
@@ -16,20 +16,20 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 * simulation directives
 .option wnflag=1
 .option savecurrents
-.dc Id {id|minimum} {id|maximum} {iinc}
+.dc Vdref {vd|minimum} {vd|maximum} {vdinc}
 .temp {temperature}
 .control
 save all
 run
-let gm = deriv(Vidsense#branch)/deriv(Vg)
-let gm_id = gm/Vidsense#branch
-* plot Vg vs Vidsense#branch
-* plot gm vs Vidsense#branch
-* plot xlog gm_id vs Vidsense#branch
+let dVd = Vd-Vdref
+let gm_go = -deriv(Vd)/deriv(Vg)
+* plot dVd vs Vdref
+* plot Vg vs Vd
+* plot gm_go vs Vd
 remzerovec
 write nfet_01v8_gotest.raw
 set wr_singlescale
-wrdata {simpath}/{filename}_{N}.data V(Vg) gm gm_id
+wrdata {simpath}/{filename}_{N}.data V(Vg) gm_go
 quit
 .endc
 
@@ -41,11 +41,14 @@ quit
 .param l      = 0.5
 .param w      = 1
 .param nf     = 1
-.param egain  = 10000
+.param egain  = 100k
 * simulation parameters
-.param imin      = 1n
-.param imax      = 10u
-.param iinc      = 1n
+.param vdmin     = 1m
+.param vdmax     = 2
+.param vdinc     = 1m
+.param imin      = 10n
+.param imax      = 40n
+.param iinc      = 10n
 
 
 **** end user architecture code
