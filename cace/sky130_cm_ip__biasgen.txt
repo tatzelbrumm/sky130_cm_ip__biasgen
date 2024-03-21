@@ -126,7 +126,9 @@ electrical_parameters {
 	}
 	conditions {
 		name: id
-		typical: 10000
+		minimum: 1
+		typical: 10
+		maximum: 10000
 		+
 
 		name: vdref
