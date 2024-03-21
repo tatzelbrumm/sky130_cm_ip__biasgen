@@ -18,6 +18,7 @@ XM1 Vd Vg GND GND sky130_fd_pr__nfet_01v8 L={l} W=1 nf={nf} ad='int((nf+1)/2) * 
 .option savecurrents
 .dc Id {id|minimum} {id|maximum} {iinc}
 .control
+.temp {temperature}
 save all
 run
 let gm = deriv(Vidsense#branch)/deriv(Vg)
