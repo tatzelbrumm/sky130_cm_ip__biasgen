@@ -42,35 +42,28 @@ only_toplevel=true
 format="tcleval( @value )"
 value="
 ** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
+.lib $::SKYWATER_MODELS/sky130.lib.spice \{corner\}
 
 "
 spice_ignore=false}
 C {devices/code_shown.sym} 1440 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
-.dc Vdref \{vdmin\} \{vdmax\} \{vdinc\} Id \{imin\} \{imax\} \{iinc\}
+.dc Vdref \{vd|minimum\} \{vd|maximum\} \{vdinc\}
+.temp \{temperature\}
 .control
 save all
 run
 let dVd = Vd-Vdref
 let gm_go = -deriv(Vd)/deriv(Vg)
-plot dVd vs Vdref
-plot Vg vs Vd
-plot gm_go vs Vd
+* plot dVd vs Vdref
+* plot Vg vs Vd
+* plot gm_go vs Vd
 remzerovec
 write nfet_01v8_gotest.raw
-alterparam l=0.2
-reset
-set appendwrite
-run
-let dVd = Vd-Vdref
-let gm_go = -deriv(Vd)/deriv(Vg)
-plot dVd vs Vdref
-plot Vg vs Vd
-plot gm_go vs Vd
-remzerovec
-write nfet_01v8_gotest.raw
+set wr_singlescale
+wrdata \{simpath\}/\{filename\}_\{N\}.data V(Vg) gm_go
+quit
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}

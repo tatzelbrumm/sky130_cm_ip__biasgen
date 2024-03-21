@@ -56,13 +56,13 @@ save all
 run
 let gm = deriv(Vidsense#branch)/deriv(Vg)
 let gm_id = gm/Vidsense#branch
-plot Vg vs Vidsense#branch
-plot gm vs Vidsense#branch
-plot xlog gm_id vs Vidsense#branch
+* plot Vg vs Vidsense#branch
+* plot gm vs Vidsense#branch
+* plot xlog gm_id vs Vidsense#branch
 remzerovec
 write nfet_01v8_gotest.raw
 set wr_singlescale
-wrdata \{simpath\}/\{filename\}_\{N\}.data V(Vg)
+wrdata \{simpath\}/\{filename\}_\{N\}.data V(Vg) gm gm_id
 quit
 .endc
 " }
