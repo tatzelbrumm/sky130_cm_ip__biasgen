@@ -1,0 +1,64 @@
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/nfet_g5v0d10v5_gotest.sch
+**.subckt nfet_g5v0d10v5_gotest
+Evgd Vg Vd Vdref Vd {-egain}
+Id net1 Vg {id}
+Vdref Vdref GND {vdref}
+Vidsense GND net1 0.0
+XM1 Vd Vg GND GND sky130_fd_pr__nfet_g5v0d10v5 L={l} W={w} nf={nf} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+
+* simulation directives
+.option wnflag=1
+.option savecurrents
+.dc Vdref {vdmin} {vdmax} {vdinc} Id {imin} {imax} {iinc}
+.control
+save all
+run
+let dVd = Vd-Vdref
+let gm_go = -deriv(Vd)/deriv(Vg)
+plot dVd vs Vdref
+plot Vg vs Vd
+plot gm_go vs Vd
+remzerovec
+write nfet_g5v0d10v5_gotest.raw
+alterparam l=0.2
+reset
+set appendwrite
+run
+let dVd = Vd-Vdref
+let gm_go = -deriv(Vd)/deriv(Vg)
+plot dVd vs Vdref
+plot Vg vs Vd
+plot gm_go vs Vd
+remzerovec
+write nfet_g5v0d10v5_gotest.raw
+.endc
+
+
+
+* device parameters
+.param id     = 10n
+.param vdref  = 200m
+.param l      = 0.5
+.param w      = 1
+.param nf     = 1
+.param egain  = 100k
+* simulation parameters
+.param vdmin     = 1m
+.param vdmax     = 2
+.param vdinc     = 1m
+.param imin      = 10n
+.param imax      = 40n
+.param iinc      = 10n
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

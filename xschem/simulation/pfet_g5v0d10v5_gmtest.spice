@@ -1,0 +1,64 @@
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/pfet_g5v0d10v5_gmtest.sch
+**.subckt pfet_g5v0d10v5_gmtest
+Evgd Vd Vg Vd Vdref {-egain}
+Id Vg net1 {id}
+Vdref GND Vdref {vdref}
+Vidsense net1 GND 0.0
+XM1 Vd Vg GND GND sky130_fd_pr__pfet_g5v0d10v5 L={l} W={w} nf={nf} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+
+* simulation directives
+.option wnflag=1
+.option savecurrents
+.dc Id {imin} {imax} {iinc} Vdref {vdmin} {vdmax} {vdinc}
+.control
+save all
+run
+let gm = deriv(Vidsense#branch)/deriv(Vg)
+let gm_id = gm/Vidsense#branch
+plot Vg vs Vidsense#branch
+plot gm vs Vidsense#branch
+plot xlog gm_id vs Vidsense#branch
+remzerovec
+write pfet_g5v0d10v5_gmtest.raw
+alterparam l=0.2
+reset
+set appendwrite
+run
+let gm = deriv(Vidsense#branch)/deriv(Vg)
+let gm_id = gm/Vidsense#branch
+plot Vg vs Vidsense#branch
+plot gm vs Vidsense#branch
+plot xlog gm_id vs Vidsense#branch
+remzerovec
+write pfet_g5v0d10v5_gmtest.raw
+.endc
+
+
+
+* device parameters
+.param id     = 10n
+.param vdref  = 200m
+.param l      = 0.5
+.param w      = 1
+.param nf     = 1
+.param egain  = 1meg
+* simulation parameters
+.param imin      = 1n
+.param imax      = 10u
+.param iinc      = 1n
+.param vdmin     = 100m
+.param vdmax     = 400m
+.param vdinc     = 100m
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
