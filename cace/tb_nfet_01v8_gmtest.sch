@@ -42,14 +42,14 @@ only_toplevel=true
 format="tcleval( @value )"
 value="
 ** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
+.lib $::SKYWATER_MODELS/sky130.lib.spice \{corner\}
 
 "
 spice_ignore=false}
 C {devices/code_shown.sym} 1540 -1430 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
 .option wnflag=1 
 .option savecurrents
-.dc Id \{imin\} \{imax\} \{iinc\} Vdref \{vdmin\} \{vdmax\} \{vdinc\}
+.dc Id \{id|minimum\} \{id|maximum\} \{iinc\}
 .control
 save all
 run
@@ -60,17 +60,7 @@ plot gm vs Vidsense#branch
 plot xlog gm_id vs Vidsense#branch
 remzerovec
 write nfet_01v8_gotest.raw
-alterparam l=0.2
-reset
-set appendwrite
-run
-let gm = deriv(Vidsense#branch)/deriv(Vg)
-let gm_id = gm/Vidsense#branch
-plot Vg vs Vidsense#branch
-plot gm vs Vidsense#branch
-plot xlog gm_id vs Vidsense#branch
-remzerovec
-write nfet_01v8_gmtest.raw
+quit
 .endc
 " }
 C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
@@ -85,9 +75,6 @@ C {devices/code_shown.sym} 2100 -1430 0 0 {name=params only_toplevel=false value
 .param imin      = 1n
 .param imax      = 10u
 .param iinc      = 1n
-.param vdmin     = 100m
-.param vdmax     = 400m
-.param vdinc     = 100m
 "}
 C {sky130_fd_pr/nfet_01v8.sym} 2140 -750 0 0 {name=M1
 L=\{l\}
