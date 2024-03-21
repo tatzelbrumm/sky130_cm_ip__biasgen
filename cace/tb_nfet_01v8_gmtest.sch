@@ -37,7 +37,7 @@ C {devices/gnd.sym} 2120 -670 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} 2070 -840 0 0 {name=l2 sig_type=std_logic lab=Vg}
 C {devices/lab_pin.sym} 2100 -810 0 0 {name=l3 sig_type=std_logic lab=Vd}
 C {devices/lab_pin.sym} 2010 -840 0 0 {name=l4 sig_type=std_logic lab=Vdref}
-C {devices/code.sym} 1680 -760 0 0 {name=TT_MODELS
+C {devices/code.sym} 1680 -760 0 0 {name=MODELS
 only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -60,6 +60,8 @@ plot gm vs Vidsense#branch
 plot xlog gm_id vs Vidsense#branch
 remzerovec
 write nfet_01v8_gotest.raw
+set wr_singlescale
+wrdata \{simpath\}/\{filename\}_\{N\}.data V(Vg)
 quit
 .endc
 " }
