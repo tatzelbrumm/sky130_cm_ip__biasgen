@@ -158,12 +158,12 @@ electrical_parameters {
 	simulate {
 		tool:		ngspice
 		template:	tb_nfet_01v8_gmtest.spice
-		format:		ascii .data Id Vg
+		format:		ascii .data Id result
 	}
 	plot {
 		filename: Vg_vs_Id.png
 		xaxis: Id
-		yaxis: Vg
+		yaxis: result
 	}
 	variables {
 		name: Id
@@ -171,7 +171,7 @@ electrical_parameters {
 		unit: nA
 
 		+
-		name: Vg
+		name: result
 		display: Gate Voltage
 		unit: V
 	}
