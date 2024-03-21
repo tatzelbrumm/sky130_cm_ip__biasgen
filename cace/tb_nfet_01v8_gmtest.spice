@@ -41,7 +41,7 @@ quit
 .param l      = 0.5
 .param w      = 1
 .param nf     = 1
-.param egain  = 1meg
+.param egain  = 10000
 * simulation parameters
 .param imin      = 1n
 .param imax      = 10u

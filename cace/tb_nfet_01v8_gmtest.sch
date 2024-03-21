@@ -73,7 +73,7 @@ C {devices/code_shown.sym} 2100 -1430 0 0 {name=params only_toplevel=false value
 .param l      = 0.5
 .param w      = 1
 .param nf     = 1
-.param egain  = 1meg
+.param egain  = 10000
 * simulation parameters
 .param imin      = 1n
 .param imax      = 10u
