@@ -60,7 +60,7 @@ let gm_id = gm/Vidsense#branch
 * plot gm vs Vidsense#branch
 * plot xlog gm_id vs Vidsense#branch
 remzerovec
-write nfet_01v8_gotest.raw
+write nfet_01v8_gmtest.raw
 set wr_singlescale
 wrdata \{simpath\}/\{filename\}_\{N\}.data V(Vg) gm gm_id
 quit
