@@ -1,0 +1,65 @@
+Setting datasheet to cace/sky130_cm_ip__biasgen.txt
+Working directory set to cace/.. (/home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen)
+Simulating parameter Vg
+Checking for out-of-date schematic-captured netlists.
+Error:  symbol for project sky130_cm_ip__biasgen was not found!
+Checking for out-of-date testbench netlist tb_nfet_01v8_gmtest.spice.
+Evaluating electrical parameter Vg
+Pins in schematic: []
+Pins in datasheet: vdd vss vbp vbn vbr 
+File ./netlist/schematic/sky130_cm_ip__biasgen.spice subcircuit sky130_cm_ip__biasgen does not have expected pins!
+Error:  Unknown/unhandled condition name "-egain"
+Error:  Unknown/unhandled condition name "l"
+Error:  Unknown/unhandled condition name "nf"
+Error:  Unknown/unhandled condition name "iinc"
+Warning: Variable {-egain} had no substitution
+Warning: Variable {id} had no substitution
+Warning: Variable {l} had no substitution
+Warning: Variable {nf} had no substitution
+Warning: Variable {iinc} had no substitution
+Launching Simulations
+Total files to simulate: 1
+Running: ngspice  ngspice/Vg_1.spice
+Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with Sparse Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 10 02:59:47 UTC 2024
+******
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+ Reference value :  1.00000e-05
+Error: argument out of range for divide
+  in term: deriv(vidsense#branch)/deriv(vg)
+
+Error: Can't evaluate "deriv(vidsense#branch)/deriv(vg)"
+Warning from checkvalid: vector gm is not available or has zero length.
+Error: RHS "gm/vidsense#branch" invalid
+Warning, (new) x axis seems to have one data point only
+Error: no such vector gm
+Error: no such vector gm_id
+
+No. of Data Rows : 1
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
+Error:  No output file ngspice/Vg_1.data from simulation!
+Files to simulate method Vg: 1
+Completed 0 of 1 simulations
+Collating results
+Simulation of Vg has completed.
+no datasheet_anno, so there are no results to save.
