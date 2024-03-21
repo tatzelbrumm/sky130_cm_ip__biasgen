@@ -29,7 +29,8 @@ N 2220 -970 2220 -950 { lab=Vd}
 N 2070 -1080 2180 -1080 { lab=GND}
 N 2330 -780 2330 -740 { lab=#net1}
 N 2330 -1080 2330 -840 { lab=GND}
-N 2100 -1080 2100 -1060 {}
+N 2100 -1080 2100 -1060 {
+lab=GND}
 C {devices/code.sym} 1680 -760 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -53,7 +54,7 @@ plot Vg vs Vd
 plot gm_go vs Vd
 remzerovec
 write pfet_g5v0d10v5_gotest.raw
-alterparam l=0.2
+alterparam l=0.5
 reset
 set appendwrite
 run
@@ -69,12 +70,12 @@ write pfet_g5v0d10v5_gotest.raw
 C {devices/code_shown.sym} 2110 -1430 0 0 {name=params only_toplevel=false value="* device parameters
 .param id     = 10n
 .param vdref  = 200m
-.param l      = 0.5
-.param w      = 1
+.param l      = 8
+.param w      = 2
 .param nf     = 1
 .param egain  = 100k
 * simulation parameters
-.param vdmin     = 1m
+.param vdmin     = 20m
 .param vdmax     = 2
 .param vdinc     = 1m
 .param imin      = 10n
