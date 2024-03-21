@@ -1,0 +1,5 @@
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_ip__biasgen.sch
+.subckt sky130_cm_ip__biasgen
+
+.ends
+.end
