@@ -1,12 +1,111 @@
 Setting datasheet to cace/sky130_cm_ip__biasgen.txt
 Working directory set to cace/.. (/home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen)
+Simulating parameter gm_go_plot
+Checking for out-of-date schematic-captured netlists.
+Checking for out-of-date testbench netlist tb_nfet_01v8_gotest.spice.
+Evaluating electrical parameter gm_go_plot
+Pins in schematic: ['avdd', 'Vpb', 'Vpc', 'Iout', 'Ibin', 'avss']
+Pins in datasheet: avdd avss Ibin Vbp Vbc Iout 
+File ./netlist/schematic/sky130_cm_ip__biasgen.spice subcircuit sky130_cm_ip__biasgen does not have expected pins!
+Error:  Unknown/unhandled condition name "-egain"
+Error:  Unknown/unhandled condition name "l"
+Error:  Unknown/unhandled condition name "nf"
+Error:  Unknown/unhandled condition name "vdinc"
+Warning: Variable {-egain} had no substitution
+Warning: Variable {l} had no substitution
+Warning: Variable {nf} had no substitution
+Warning: Variable {vdinc} had no substitution
+Launching Simulations
+Total files to simulate: 1
+Running: ngspice  ngspice/gm_go_plot_1.spice
+Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with Sparse Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 10 02:59:47 UTC 2024
+******
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gotest.sch
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+ Reference value :  1.00000e-01
+No. of Data Rows : 1901
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
+Files to simulate method gm_go_plot: 1
+Completed 1 of 1 simulations
+Plotting results
+Simulation of gm_go_plot has completed.
+Simulating parameter gm_id_plot
+Checking for out-of-date schematic-captured netlists.
+Checking for out-of-date testbench netlist tb_nfet_01v8_gmtest.spice.
+Evaluating electrical parameter gm_id_plot
+Pins in schematic: ['avdd', 'Vpb', 'Vpc', 'Iout', 'Ibin', 'avss']
+Pins in datasheet: avdd avss Ibin Vbp Vbc Iout 
+File ./netlist/schematic/sky130_cm_ip__biasgen.spice subcircuit sky130_cm_ip__biasgen does not have expected pins!
+Error:  Unknown/unhandled condition name "-egain"
+Error:  Unknown/unhandled condition name "l"
+Error:  Unknown/unhandled condition name "nf"
+Error:  Unknown/unhandled condition name "iinc"
+Warning: Variable {-egain} had no substitution
+Warning: Variable {id} had no substitution
+Warning: Variable {l} had no substitution
+Warning: Variable {nf} had no substitution
+Warning: Variable {iinc} had no substitution
+Launching Simulations
+Total files to simulate: 1
+Running: ngspice  ngspice/gm_id_plot_1.spice
+Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with Sparse Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 10 02:59:47 UTC 2024
+******
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+ Reference value :  1.00000e-09
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
+Files to simulate method gm_id_plot: 1
+Completed 1 of 1 simulations
+Plotting results
+Simulation of gm_id_plot has completed.
 Simulating parameter Vg_plot
 Checking for out-of-date schematic-captured netlists.
 Checking for out-of-date testbench netlist tb_nfet_01v8_gmtest.spice.
-Schematic netlist is older than top-level schematic
-Generating testbench netlist tb_nfet_01v8_gmtest.spice from schematic. . .
-Calling xschem to generate netlist
 Evaluating electrical parameter Vg_plot
+Pins in schematic: ['avdd', 'Vpb', 'Vpc', 'Iout', 'Ibin', 'avss']
+Pins in datasheet: avdd avss Ibin Vbp Vbc Iout 
+File ./netlist/schematic/sky130_cm_ip__biasgen.spice subcircuit sky130_cm_ip__biasgen does not have expected pins!
 Error:  Unknown/unhandled condition name "-egain"
 Error:  Unknown/unhandled condition name "l"
 Error:  Unknown/unhandled condition name "nf"
@@ -43,20 +142,20 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
  Reference value :  1.00000e-09
- Reference value :  2.93400e-06
- Reference value :  6.20100e-06
- Reference value :  8.91100e-06
-No. of Data Rows : 10000
+No. of Data Rows : 1000
 binary raw file "nfet_01v8_gotest.raw"
 ngspice-42 done
 Files to simulate method Vg_plot: 1
 Completed 1 of 1 simulations
 Plotting results
 Simulation of Vg_plot has completed.
-Simulating parameter Vg
+Simulating parameter Vg_nmos
 Checking for out-of-date schematic-captured netlists.
 Checking for out-of-date testbench netlist tb_nfet_01v8_gmtest.spice.
-Evaluating electrical parameter Vg
+Evaluating electrical parameter Vg_nmos
+Pins in schematic: ['avdd', 'Vpb', 'Vpc', 'Iout', 'Ibin', 'avss']
+Pins in datasheet: avdd avss Ibin Vbp Vbc Iout 
+File ./netlist/schematic/sky130_cm_ip__biasgen.spice subcircuit sky130_cm_ip__biasgen does not have expected pins!
 Error:  Unknown/unhandled condition name "-egain"
 Error:  Unknown/unhandled condition name "l"
 Error:  Unknown/unhandled condition name "nf"
@@ -108,7 +207,7 @@ Warning: Variable {nf} had no substitution
 Warning: Variable {iinc} had no substitution
 Launching Simulations
 Total files to simulate: 9
-Running: ngspice  ngspice/Vg_1.spice
+Running: ngspice  ngspice/Vg_nmos_2.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -132,7 +231,7 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
 
-Running: ngspice  ngspice/Vg_2.spice
+Running: ngspice  ngspice/Vg_nmos_1.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -156,7 +255,55 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
 
-Running: ngspice  ngspice/Vg_4.spice
+Running: ngspice  ngspice/Vg_nmos_3.spice
+Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with Sparse Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 10 02:59:47 UTC 2024
+******
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Running: ngspice  ngspice/Vg_nmos_5.spice
+Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with Sparse Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 10 02:59:47 UTC 2024
+******
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
+
+Running: ngspice  ngspice/Vg_nmos_4.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -181,31 +328,10 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
 
  Reference value :  1.00000e-09
-Running: ngspice  ngspice/Vg_6.spice
-Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
-******
-** ngspice-42 : Circuit level simulation program
-** Compiled with Sparse Direct Linear Solver
-** The U. C. Berkeley CAD Group
-** Copyright 1985-1994, Regents of the University of California.
-** Copyright 2001-2023, The ngspice team.
-** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
-** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
-** Creation Date: Sun Mar 10 02:59:47 UTC 2024
-******
-
-Note: Compatibility modes selected: hs a
-
-
-Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
-
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
-
-Running: ngspice  ngspice/Vg_7.spice
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
+Running: ngspice  ngspice/Vg_nmos_7.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -229,8 +355,7 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
- Reference value :  1.00000e-09
-Running: ngspice  ngspice/Vg_5.spice
+Running: ngspice  ngspice/Vg_nmos_6.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -255,116 +380,30 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
 
  Reference value :  1.00000e-09
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
  Reference value :  1.00000e-09
- Reference value :  1.26600e-06
- Reference value :  1.93400e-06
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
  Reference value :  1.00000e-09
-Running: ngspice  ngspice/Vg_3.spice
-Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
-******
-** ngspice-42 : Circuit level simulation program
-** Compiled with Sparse Direct Linear Solver
-** The U. C. Berkeley CAD Group
-** Copyright 1985-1994, Regents of the University of California.
-** Copyright 2001-2023, The ngspice team.
-** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
-** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
-** Creation Date: Sun Mar 10 02:59:47 UTC 2024
-******
-
-Note: Compatibility modes selected: hs a
-
-
-Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/cace/tb_nfet_01v8_gmtest.sch
-
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-option SCALE: Scale is set to 1e-06 for instance and model parameters
-Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
-
- Reference value :  5.70000e-07
- Reference value :  2.45200e-06
- Reference value :  2.67100e-06
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
  Reference value :  1.00000e-09
- Reference value :  2.58400e-06
- Reference value :  8.00000e-09
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
  Reference value :  1.00000e-09
- Reference value :  2.33600e-06
- Reference value :  4.35000e-06
- Reference value :  2.64000e-07
- Reference value :  3.33800e-06
- Reference value :  1.07300e-06
- Reference value :  3.41100e-06
- Reference value :  1.70000e-08
- Reference value :  2.68900e-06
- Reference value :  2.50600e-06
- Reference value :  5.88200e-06
- Reference value :  2.78000e-07
- Reference value :  4.40400e-06
- Reference value :  4.13000e-07
- Reference value :  5.29800e-06
- Reference value :  3.42800e-06
- Reference value :  9.28000e-07
- Reference value :  6.77800e-06
- Reference value :  1.63700e-06
- Reference value :  2.73900e-06
- Reference value :  6.55400e-06
- Reference value :  2.17700e-06
- Reference value :  4.02400e-06
- Reference value :  6.79100e-06
- Reference value :  6.35900e-06
- Reference value :  3.44400e-06
- Reference value :  6.14600e-06
- Reference value :  2.75000e-06
- Reference value :  6.73300e-06
- Reference value :  3.83800e-06
- Reference value :  7.04900e-06
- Reference value :  7.39600e-06
- Reference value :  7.17800e-06
- Reference value :  3.91800e-06
- Reference value :  3.20300e-06
- Reference value :  3.93500e-06
- Reference value :  7.68700e-06
- Reference value :  7.96700e-06
- Reference value :  8.74600e-06
- Reference value :  5.21300e-06
- Reference value :  3.56300e-06
- Reference value :  4.22000e-06
- Reference value :  8.34000e-06
-No. of Data Rows : 10000
+No. of Data Rows : 1000
 binary raw file "nfet_01v8_gotest.raw"
 ngspice-42 done
- Reference value :  7.27500e-06
- Reference value :  4.13000e-06
- Reference value :  5.79400e-06
- Reference value :  5.73000e-06
- Reference value :  7.31600e-06
- Reference value :  9.10800e-06
-No. of Data Rows : 10000
+ Reference value :  1.00000e-09
+No. of Data Rows : 1000
 binary raw file "nfet_01v8_gotest.raw"
 ngspice-42 done
- Reference value :  9.97800e-06
-No. of Data Rows : 10000
-binary raw file "nfet_01v8_gotest.raw"
-ngspice-42 done
- Reference value :  9.83900e-06
-No. of Data Rows : 10000
-binary raw file "nfet_01v8_gotest.raw"
-ngspice-42 done
- Reference value :  9.40300e-06
-No. of Data Rows : 10000
-binary raw file "nfet_01v8_gotest.raw"
-ngspice-42 done
- Reference value :  8.68500e-06
-No. of Data Rows : 10000
-binary raw file "nfet_01v8_gotest.raw"
-ngspice-42 done
- Reference value :  8.40600e-06
-No. of Data Rows : 10000
-binary raw file "nfet_01v8_gotest.raw"
-ngspice-42 done
-Running: ngspice  ngspice/Vg_8.spice
+Running: ngspice  ngspice/Vg_nmos_8.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -389,9 +428,10 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
  Reference value :  1.00000e-09
- Reference value :  3.37100e-06
- Reference value :  6.33900e-06
-Running: ngspice  ngspice/Vg_9.spice
+No. of Data Rows : 1000
+binary raw file "nfet_01v8_gotest.raw"
+ngspice-42 done
+Running: ngspice  ngspice/Vg_nmos_9.spice
 Current working directory is: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen
 ******
 ** ngspice-42 : Circuit level simulation program
@@ -415,19 +455,12 @@ option SCALE: Scale is set to 1e-06 for instance and model parameters
 option SCALE: Scale is set to 1e-06 for instance and model parameters
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
- Reference value :  9.31200e-06
-No. of Data Rows : 10000
-binary raw file "nfet_01v8_gotest.raw"
-ngspice-42 done
  Reference value :  1.00000e-09
- Reference value :  3.23500e-06
- Reference value :  6.30900e-06
- Reference value :  9.57200e-06
-No. of Data Rows : 10000
+No. of Data Rows : 1000
 binary raw file "nfet_01v8_gotest.raw"
 ngspice-42 done
-Files to simulate method Vg: 9
+Files to simulate method Vg_nmos: 9
 Completed 9 of 9 simulations
 Collating results
-Simulation of Vg has completed.
+Simulation of Vg_nmos has completed.
 no datasheet_anno, so there are no results to save.
