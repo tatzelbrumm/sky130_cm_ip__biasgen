@@ -97,6 +97,18 @@ default_conditions {
 	unit:		mV
 	typical:	200
 
+	+
+	name: temperature
+	description:	Ambient temperature
+	display:	temp
+	unit:		{degrees}C
+	typical: 27
+
+	+
+	name: corner
+	description:	Process corner
+	display:	corner
+	typical: tt
 }
 
 # List of electrical parameters to be measured and their specified limits
@@ -129,18 +141,22 @@ electrical_parameters {
 		minimum: 1
 		typical: 10
 		maximum: 10000
-		+
 
+		+
 		name: vdref
 		typical: 200
-		+
 
-		name: temperature
-		typical: 27
+		+
+		name:		temperature
+		minimum:	-40
+		typical:	27
+		maximum:	130
 
 		+
 		name: corner
+		minimum: ss
 		typical: tt
+		maximum: ff
 	}
 }
 

@@ -51,6 +51,7 @@ C {devices/code_shown.sym} 1540 -1430 0 0 {name=NGSPICE only_toplevel=true value
 .option savecurrents
 .dc Id \{id|minimum\} \{id|maximum\} \{iinc\}
 .control
+.temp \{temperature\}
 save all
 run
 let gm = deriv(Vidsense#branch)/deriv(Vg)
