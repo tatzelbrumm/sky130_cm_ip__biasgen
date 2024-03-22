@@ -14,7 +14,7 @@ lab=avdd}
 N 520 -780 520 -730 {
 lab=avdd}
 N 720 -670 720 -570 {
-lab=#net1}
+lab=vd2}
 N 520 -670 520 -570 {
 lab=vd1}
 N 740 -780 740 -540 {
@@ -135,27 +135,6 @@ nf=\{nfc\} mult=1
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {devices/code_shown.sym} 960 -750 0 0 {name=params only_toplevel=false value="* device parameters
-.param id     = 10n
-.param vdref  = 200m
-.param l      = 0.15
-.param w      = 1
-.param nf     = 1
-.param lc     = 0.5
-.param wc     = 1
-.param nfc    = 1
-.param lb     = 0.5
-.param wb     = 1
-.param nfb    = 1
-.param ln     = 0.5
-.param wn     = 1
-.param nfn    = 1
-.param egain  = 10000
-* simulation parameters
-.param imin      = 1n
-.param imax      = 10u
-.param iinc      = 1n
-"}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 540 -700 0 1 {name=M1
 L=\{l\}
 W=\{w\}
@@ -185,23 +164,23 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 200 -260 0 1 {name=Mn1
-L=\{ln\}
-W=\{wn\}
-nf=\{nfn\} mult=1
+L=\{lnmos\}
+W=\{wnmos\}
+nf=\{nfnmos\} mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 320 -260 0 0 {name=Mn2
-L=\{ln\}
-W=\{wn\}
-nf=\{nfn\} mult=1
+L=\{lnmos\}
+W=\{wnmos\}
+nf=\{nfnmos\} mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 500 -260 0 0 {name=Mn3
-L=\{ln\}
-W=\{wn\}
-nf=\{nfn\} mult=1
+L=\{lnmos\}
+W=\{wnmos\}
+nf=\{nfnmos\} mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
