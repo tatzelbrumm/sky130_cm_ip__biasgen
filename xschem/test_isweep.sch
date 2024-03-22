@@ -30,7 +30,7 @@ lab=vdda}
 N 460 -800 720 -800 {
 lab=vdda}
 N 720 -580 720 -280 {
-lab=#net1}
+lab=in}
 N 720 -800 720 -640 {
 lab=vdda}
 N 1380 -380 1380 -240 {
@@ -38,9 +38,9 @@ lab=out}
 N 800 -190 800 -140 {
 lab=GND}
 N 800 -280 800 -250 {
-lab=#net1}
+lab=in}
 N 720 -280 800 -280 {
-lab=#net1}
+lab=in}
 N 780 -140 800 -140 {
 lab=GND}
 N 960 -190 960 -140 {
@@ -56,19 +56,19 @@ lab=GND}
 N 1120 -220 1120 -140 {
 lab=GND}
 N 1040 -220 1060 -220 {
-lab=#net1}
+lab=in}
 N 1040 -280 1040 -220 {
-lab=#net1}
+lab=in}
 N 900 -280 1040 -280 {
-lab=#net1}
+lab=in}
 N 900 -220 920 -220 {
-lab=#net1}
+lab=in}
 N 900 -280 900 -220 {
-lab=#net1}
+lab=in}
 N 840 -220 860 -220 {
-lab=#net1}
+lab=in}
 N 860 -280 860 -220 {
-lab=#net1}
+lab=in}
 N 780 -220 800 -220 {
 lab=GND}
 N 780 -220 780 -140 {
@@ -90,9 +90,9 @@ lab=GND}
 N 1100 -140 1120 -140 {
 lab=GND}
 N 860 -280 900 -280 {
-lab=#net1}
+lab=in}
 N 800 -280 860 -280 {
-lab=#net1}
+lab=in}
 N 460 -140 780 -140 {
 lab=GND}
 N 720 -800 940 -800 {
@@ -197,6 +197,8 @@ C {devices/code_shown.sym} 80 -890 0 0 {name=NGSPICE only_toplevel=true value="*
 .control
 save all
 run
+let dI=@bload[i]-@ibias[current]
+let dI_I=dI/@ibias[current]
 write test_isweep.raw
 .endc
 " }
@@ -244,3 +246,4 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/lab_wire.sym} 1140 -520 0 0 {name=p2 sig_type=std_logic lab=vpb}
+C {devices/lab_wire.sym} 770 -280 0 0 {name=p3 sig_type=std_logic lab=in}
