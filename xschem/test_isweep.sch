@@ -19,7 +19,7 @@ N 1640 -180 1640 -140 {
 lab=GND}
 N 1640 -260 1640 -240 {
 lab=ofs}
-N 800 -140 1380 -140 {
+N 1120 -140 1380 -140 {
 lab=GND}
 N 460 -140 460 -120 {
 lab=GND}
@@ -41,7 +41,7 @@ N 800 -280 800 -250 {
 lab=#net1}
 N 720 -280 800 -280 {
 lab=#net1}
-N 460 -140 800 -140 {
+N 780 -140 800 -140 {
 lab=GND}
 N 960 -190 960 -140 {
 lab=GND}
@@ -59,7 +59,7 @@ N 1040 -220 1060 -220 {
 lab=#net1}
 N 1040 -280 1040 -220 {
 lab=#net1}
-N 800 -280 1040 -280 {
+N 900 -280 1040 -280 {
 lab=#net1}
 N 900 -220 920 -220 {
 lab=#net1}
@@ -69,18 +69,84 @@ N 840 -220 860 -220 {
 lab=#net1}
 N 860 -280 860 -220 {
 lab=#net1}
-N 1100 -380 1100 -250 {
-lab=out}
-N 1100 -380 1380 -380 {
-lab=out}
-N 960 -380 960 -250 {
-lab=out}
-N 960 -380 1100 -380 {
-lab=out}
 N 780 -220 800 -220 {
 lab=GND}
 N 780 -220 780 -140 {
 lab=GND}
+N 940 -800 960 -800 {
+lab=vdda}
+N 960 -800 960 -630 {
+lab=vdda}
+N 940 -600 960 -600 {
+lab=vdda}
+N 940 -800 940 -600 {
+lab=vdda}
+N 800 -140 960 -140 {
+lab=GND}
+N 980 -140 1100 -140 {
+lab=GND}
+N 960 -140 980 -140 {
+lab=GND}
+N 1100 -140 1120 -140 {
+lab=GND}
+N 860 -280 900 -280 {
+lab=#net1}
+N 800 -280 860 -280 {
+lab=#net1}
+N 460 -140 780 -140 {
+lab=GND}
+N 720 -800 940 -800 {
+lab=vdda}
+N 960 -480 960 -250 {
+lab=vpc}
+N 1000 -600 1020 -600 {
+lab=vpc}
+N 960 -480 1020 -480 {
+lab=vpc}
+N 1080 -800 1100 -800 {
+lab=vdda}
+N 1100 -800 1100 -750 {
+lab=vdda}
+N 1080 -720 1100 -720 {
+lab=vdda}
+N 1080 -800 1080 -720 {
+lab=vdda}
+N 960 -800 1080 -800 {
+lab=vdda}
+N 1300 -720 1320 -720 {
+lab=vdda}
+N 1320 -800 1320 -720 {
+lab=vdda}
+N 1300 -800 1320 -800 {
+lab=vdda}
+N 1300 -800 1300 -750 {
+lab=vdda}
+N 1140 -720 1160 -720 {
+lab=vpb}
+N 1100 -520 1160 -520 {
+lab=vpb}
+N 960 -570 960 -480 {
+lab=vpc}
+N 1020 -600 1020 -480 {
+lab=vpc}
+N 1100 -800 1300 -800 {
+lab=vdda}
+N 1100 -520 1100 -250 {
+lab=vpb}
+N 1100 -690 1100 -520 {
+lab=vpb}
+N 1160 -720 1160 -520 {
+lab=vpb}
+N 1240 -720 1260 -720 {
+lab=vpb}
+N 1240 -720 1240 -520 {
+lab=vpb}
+N 1160 -520 1240 -520 {
+lab=vpb}
+N 1300 -690 1300 -380 {
+lab=out}
+N 1300 -380 1380 -380 {
+lab=out}
 C {devices/title.sym} 160 -40 0 0 {name=l1 author="Christoph Maier"}
 C {devices/code_shown.sym} 1540 -890 0 0 {name=params only_toplevel=false value="* device parameters
 .param l      = 8
@@ -99,7 +165,7 @@ C {devices/code_shown.sym} 1540 -890 0 0 {name=params only_toplevel=false value=
 .param avdd   = 3.3
 .param ibias  = 50n
 .param rload  = 100k
-.param vofs   = 2
+.param vofs   = 1
 * simulation parameters
 .param imin   = 50n
 .param imax   = 1u
@@ -155,3 +221,26 @@ nf=1 mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 980 -600 0 1 {name=Mpb
+L=\{lb\}
+W=\{wb\}
+nf=1 mult=1
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 1000 -480 0 0 {name=p1 sig_type=std_logic lab=vpc}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1120 -720 0 1 {name=Mp1
+L=\{l\}
+W=\{w\}
+nf=1 mult=1
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1280 -720 0 0 {name=Mp2
+L=\{l\}
+W=\{w\}
+nf=1 mult=1
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 1140 -520 0 0 {name=p2 sig_type=std_logic lab=vpb}
