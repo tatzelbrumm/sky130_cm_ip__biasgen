@@ -121,9 +121,9 @@ N 1300 -800 1320 -800 {
 lab=vdda}
 N 1300 -800 1300 -750 {
 lab=vdda}
-N 1140 -720 1160 -720 {
+N 1140 -720 1180 -720 {
 lab=vpb}
-N 1100 -520 1160 -520 {
+N 1100 -520 1180 -520 {
 lab=vpb}
 N 960 -570 960 -480 {
 lab=vpc}
@@ -133,20 +133,44 @@ N 1100 -800 1300 -800 {
 lab=vdda}
 N 1100 -520 1100 -250 {
 lab=vpb}
-N 1100 -690 1100 -520 {
+N 1180 -720 1180 -520 {
 lab=vpb}
-N 1160 -720 1160 -520 {
+N 1220 -720 1220 -520 {
 lab=vpb}
-N 1240 -720 1260 -720 {
-lab=vpb}
-N 1240 -720 1240 -520 {
-lab=vpb}
-N 1160 -520 1240 -520 {
-lab=vpb}
-N 1300 -690 1300 -380 {
-lab=out}
 N 1300 -380 1380 -380 {
 lab=out}
+N 1220 -720 1260 -720 {
+lab=vpb}
+N 1180 -520 1220 -520 {
+lab=vpb}
+N 1300 -570 1300 -380 {
+lab=out}
+N 1300 -690 1300 -630 {
+lab=vd2}
+N 1300 -600 1320 -600 {
+lab=vdda}
+N 1320 -720 1320 -600 {
+lab=vdda}
+N 1100 -570 1100 -520 {
+lab=vpb}
+N 1100 -690 1100 -630 {
+lab=vd1}
+N 1140 -600 1160 -600 {
+lab=vpc}
+N 1160 -600 1160 -480 {
+lab=vpc}
+N 1240 -600 1260 -600 {
+lab=vpc}
+N 1240 -600 1240 -480 {
+lab=vpc}
+N 1160 -480 1240 -480 {
+lab=vpc}
+N 1020 -480 1160 -480 {
+lab=vpc}
+N 1080 -720 1080 -600 {
+lab=vdda}
+N 1080 -600 1100 -600 {
+lab=vdda}
 C {devices/title.sym} 160 -40 0 0 {name=l1 author="Christoph Maier"}
 C {devices/code_shown.sym} 1540 -890 0 0 {name=params only_toplevel=false value="* device parameters
 .param l      = 8
@@ -155,8 +179,8 @@ C {devices/code_shown.sym} 1540 -890 0 0 {name=params only_toplevel=false value=
 .param lc     = 0.5
 .param wc     = 2
 .param nfc    = 1
-.param lb     = 16
-.param wb     = 2
+.param lb     = 18
+.param wb     = 1
 .param nfb    = 1
 .param lnmos  = 8
 .param wnmos  = 2
@@ -247,3 +271,19 @@ spiceprefix=X
 }
 C {devices/lab_wire.sym} 1140 -520 0 0 {name=p2 sig_type=std_logic lab=vpb}
 C {devices/lab_wire.sym} 770 -280 0 0 {name=p3 sig_type=std_logic lab=in}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1120 -600 0 1 {name=Mpc1
+L=\{lc\}
+W=\{wc\}
+nf=1 mult=1
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1280 -600 0 0 {name=Mpc2
+L=\{lc\}
+W=\{wc\}
+nf=1 mult=1
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 1100 -670 3 0 {name=p4 sig_type=std_logic lab=vd1}
+C {devices/lab_wire.sym} 1300 -670 3 0 {name=p5 sig_type=std_logic lab=vd2}
