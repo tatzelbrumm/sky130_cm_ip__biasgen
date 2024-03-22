@@ -1,0 +1,87 @@
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/test_isweep.sch
+**.subckt test_isweep
+Vdda vdda GND {avdd}
+.save i(vdda)
+Ibias vdda in {ibias}
+Vres res GND {rload}
+Bload out GND i=(v(out)-v(ofs))/v(res)
+Vofs ofs GND {vofs}
+x1 vdda vpb vpc out in GND sky130_cm_ip__biasgen l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lb=18 wb=1 nfb=1 ln=8 wn=2 nfn=1
+**** begin user architecture code
+
+* device parameters
+.param l      = 8
+.param w      = 2
+.param nf     = 1
+.param lc     = 0.5
+.param wc     = 2
+.param nfc    = 1
+.param lb     = 18
+.param wb     = 1
+.param nfb    = 1
+.param lnmos  = 8
+.param wnmos  = 2
+.param nfn    = 1
+* instrumentation parameters
+.param avdd   = 3.3
+.param ibias  = 50n
+.param rload  = 100k
+.param vofs   = 1
+* simulation parameters
+.param imin   = 50n
+.param imax   = 1u
+.param iinc   = 50n
+
+
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+
+* simulation directives
+.option wnflag=1
+.option savecurrents
+.dc Ibias {imin} {imax} {iinc}
+.control
+save all
+run
+let dI=@bload[i]-@ibias[current]
+let dI_I=dI/@ibias[current]
+write test_isweep.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/sky130_cm_ip__biasgen.sym # of pins=6
+** sym_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_ip__biasgen.sym
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_ip__biasgen.sch
+.subckt sky130_cm_ip__biasgen avdd Vpb Vpc Iout Ibin avss  l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lb=18 wb=1 nfb=1 lnmos=8 wnmos=2
++ nfnmos=1
+*.iopin avss
+*.iopin avdd
+*.iopin Ibin
+*.iopin Vpb
+*.iopin Vpc
+*.iopin Iout
+XMc1 Vpb Vpc vd1 avdd sky130_fd_pr__pfet_g5v0d10v5 L={lc} W={wc} nf={nfc} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 vd1 Vpb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={l} W={w} nf={nf} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMc2 Iout Vpc vd2 avdd sky130_fd_pr__pfet_g5v0d10v5 L={lc} W={wc} nf={nfc} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 vd2 Vpb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={l} W={w} nf={nf} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMc3 Vpc Vpc avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={lb} W={wb} nf={nfb} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMn1 Ibin Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={lnmos} W={wnmos} nf={nfnmos} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMn2 Vpc Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={lnmos} W={wnmos} nf={nfnmos} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMn3 Vpb Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={lnmos} W={wnmos} nf={nfnmos} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end
