@@ -1,0 +1,72 @@
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/test_levelshifter.sch
+**.subckt test_levelshifter
+Vddd ddd GND {dvdd}
+.save i(vddd)
+Vdda dda GND {avdd}
+.save i(vdda)
+Vin in GND DC {vindc} PULSE(0 {dvdd} {delay} {rise} {fall} {width} {period})
+.save i(vin)
+x1 dda Q ddd Qb in GND sky130_cm_levelshifter
+**** begin user architecture code
+
+* device parameters
+* simulation parameters
+.param dvdd   = 1.8
+.param avdd   = 3.3
+.param vindc  = 1.5
+.param delay  = 2n
+.param rise   = 10p
+.param fall   = 10p
+.param width  = 4n
+.param period = 8n
+
+
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice ff
+
+
+
+* simulation directives
+.option wnflag=1
+*.option savecurrents
+.tran 1p 20n 1p
+.control
+save all
+run
+write test_levelshifter.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  xschem/sky130_cm_levelshifter.sym # of pins=6
+** sym_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_levelshifter.sym
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_levelshifter.sch
+.subckt sky130_cm_levelshifter avdd Q dvdd Qb A avss
+*.iopin avss
+*.iopin avdd
+*.iopin A
+*.iopin dvdd
+*.iopin Qb
+*.iopin Q
+XMnl1 Q ab avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMnl2 Qb abb avss avss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMpl1 Q Qb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMpl2 Qb Q avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMn1 ab A avss avss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMp1 ab A dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMn2 abb ab avss avss sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMp2 abb ab dvdd dvdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end
