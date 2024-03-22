@@ -61,7 +61,7 @@ plot gm vs Vidsense#branch
 plot xlog gm_id vs Vidsense#branch
 remzerovec
 write pfet_g5v0d10v5_gmtest.raw
-alterparam l=0.5
+alterparam l=2
 reset
 set appendwrite
 run
@@ -84,7 +84,7 @@ C {devices/code_shown.sym} 2100 -1430 0 0 {name=params only_toplevel=false value
 .param egain  = 1meg
 * simulation parameters
 .param imin      = 1n
-.param imax      = 10u
+.param imax      = 1u
 .param iinc      = 1n
 .param vdmin     = 100m
 .param vdmax     = 400m

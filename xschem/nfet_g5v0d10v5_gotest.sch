@@ -60,7 +60,7 @@ plot Vg vs Vd
 plot gm_go vs Vd
 remzerovec
 write nfet_g5v0d10v5_gotest.raw
-alterparam l=0.2
+alterparam l=2
 reset
 set appendwrite
 run
@@ -77,8 +77,8 @@ C {devices/vsource.sym} 2270 -960 2 1 {name=Vidsense value=0.0}
 C {devices/code_shown.sym} 2110 -1430 0 0 {name=params only_toplevel=false value="* device parameters
 .param id     = 10n
 .param vdref  = 200m
-.param l      = 0.5
-.param w      = 1
+.param l      = 8
+.param w      = 2
 .param nf     = 1
 .param egain  = 100k
 * simulation parameters
