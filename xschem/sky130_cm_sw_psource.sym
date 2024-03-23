@@ -1,0 +1,31 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname l=@l w=@w nf=@nf lc=@lc wc=@wc nfc=@nfc lon=@lon won=@won nfon=@nfon loff=@loff woff=@woff nfoff=@nfoff"
+template="name=x1 l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1"
+}
+V {}
+S {}
+E {}
+L 4 -40 -60 -40 60 {}
+L 4 40 -60 40 60 {}
+L 4 -40 -60 40 -60 {}
+L 4 -40 60 40 60 {}
+L 7 -60 -20 -40 -20 {}
+L 7 -60 20 -40 20 {}
+L 7 0 60 0 80 {}
+B 5 17.5 -62.5 22.5 -57.5 {name=avdd dir=inout}
+B 5 -62.5 -22.5 -57.5 -17.5 {name=offb dir=inout}
+B 5 -2.5 -62.5 2.5 -57.5 {name=Vpb dir=inout}
+B 5 -62.5 17.5 -57.5 22.5 {name=onb dir=inout}
+B 5 -22.5 -62.5 -17.5 -57.5 {name=Vpc dir=inout}
+B 5 -2.5 77.5 2.5 82.5 {name=Iout dir=inout}
+T {@symname} -48 -6 0 0 0.3 0.3 {}
+T {@name} 25 -72 0 0 0.2 0.2 {}
+T {avdd} 35 -54 0 1 0.2 0.2 {}
+T {offb} -35 -24 0 0 0.2 0.2 {}
+T {Vpb} 5 -54 0 1 0.2 0.2 {}
+T {onb} -35 16 0 0 0.2 0.2 {}
+T {Vpc} -15 -54 0 1 0.2 0.2 {}
+T {Iout} 5 46 0 1 0.2 0.2 {}
