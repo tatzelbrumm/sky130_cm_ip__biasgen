@@ -27,7 +27,7 @@ plot Vg vs Vd
 plot gm_go vs Vd
 remzerovec
 write pfet_g5v0d10v5_gotest.raw
-alterparam l=0.5
+alterparam l=2
 reset
 set appendwrite
 run
