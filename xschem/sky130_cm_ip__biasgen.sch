@@ -186,5 +186,5 @@ C {devices/lab_wire.sym} 960 -620 0 0 {name=p14 lab=vgon}
 C {xschem/sky130_cm_levelshifter.sym} 880 -640 0 0 {name=xlvl}
 C {devices/iopin.sym} 140 -860 0 1 {name=p15 lab=dvdd}
 C {devices/iopin.sym} 140 -480 0 1 {name=p16 lab=en}
-C {xschem/sky130_cm_sw_psource.sym} 560 -640 0 0 {name=x0 l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}
-C {xschem/sky130_cm_sw_psource.sym} 1040 -640 0 0 {name=x1 l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}
+C {xschem/sky130_cm_sw_psource.sym} 560 -640 0 0 {name=x0 l=\{l\} w=\{w\} nf=\{nf\} lc=\{lc\} wc=\{wc\} nfc=\{nfc\} lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}
+C {xschem/sky130_cm_sw_psource.sym} 1040 -640 0 0 {name=x1 l=\{l\} w=\{w\} nf=\{nf\} lc=\{lc\} wc=\{wc\} nfc=\{nfc\} lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}
