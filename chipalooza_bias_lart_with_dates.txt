@@ -1,0 +1,13 @@
+~/EDA/efabless/chipalooza2024/chipalooza_bias$ lart
+total 312
+-rw-rw-r--  1 cmaier cmaier     36 Feb 28 02:32 .gitignore
+-rw-rw-r--  1 cmaier cmaier  10020 Mär  1 17:57 README.md
+-rw-rw-r--  1 cmaier cmaier 125628 Mär  1 17:58 chipalooza2024_bias.pdf
+drwxrwxr-x  8 cmaier cmaier   4096 Mär  1 20:14 .git
+-rw-rw-r--  1 cmaier cmaier   1641 Mär  2 04:53 Oops.txt
+-rw-rw-r--  1 cmaier cmaier  40032 Mär  2 05:02 Oops_.pdf
+-rw-rw-r--  1 cmaier cmaier   2607 Mär  2 07:48 Oops.md
+-rw-rw-r--  1 cmaier cmaier 111307 Mär  2 07:48 Oops.pdf
+drwxrwxr-x  3 cmaier cmaier   4096 Mär  2 07:49 .
+drwxrwxr-x 30 cmaier cmaier   4096 Mär 22 20:07 ..
+
