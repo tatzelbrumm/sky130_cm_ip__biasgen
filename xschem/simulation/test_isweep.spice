@@ -81,8 +81,10 @@ XMn2 Vpc Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={lnmos} W={wnmos} nf={nfn
 XMn3 Vpb Ibin avss avss sky130_fd_pr__nfet_g5v0d10v5 L={lnmos} W={wnmos} nf={nfnmos} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 xlvl avdd vgoff dvdd vgon en avss sky130_cm_levelshifter
-x0 avdd avdd Vpb avss Vpc Vpb sky130_cm_sw_psource l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1
-x1 avdd vgoff Vpb vgon Vpc Iout sky130_cm_sw_psource l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1
+x0 avdd avdd Vpb avss Vpc Vpb sky130_cm_sw_psource l={l} w={w} nf={nf} lc={lc} wc={wc} nfc={nfc} lon=.5 won=1 nfon=1 loff=.5 woff=1
++ nfoff=1
+x1 avdd vgoff Vpb vgon Vpc Iout sky130_cm_sw_psource l={l} w={w} nf={nf} lc={lc} wc={wc} nfc={nfc} lon=.5 won=1 nfon=1 loff=.5 woff=1
++ nfoff=1
 .ends
 
 
