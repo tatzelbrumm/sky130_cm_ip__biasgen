@@ -110,7 +110,8 @@ value="
 "
 spice_ignore=false}
 C {devices/code_shown.sym} 80 -890 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
-.option wnflag=1 
+.option wnflag=1
+.options gmin=1e-15 abstol=1p
 .option savecurrents
 .dc Ibias \{imin\} \{imax\} \{iinc\}
 .control

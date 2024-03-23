@@ -96,7 +96,7 @@ C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value=
 .param attack = 200u
 .param decay  = 200u
 .param sustain= 100u
-.param cycle  = 500u
+.param cycle  = 600u
 .param td     = 10u
 .param tr     = 1n
 .param tf     = 1n
@@ -124,7 +124,8 @@ value="
 "
 spice_ignore=false}
 C {devices/code_shown.sym} 80 -890 0 0 {name=NGSPICE only_toplevel=true value="* simulation directives
-.option wnflag=1 
+.option wnflag=1
+.options gmin=1e-15 abstol=1p
 .option savecurrents
 .tran \{tres\} \{2*cycle\} \{tres\}
 .control
