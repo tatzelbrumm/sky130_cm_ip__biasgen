@@ -45,6 +45,7 @@ Ven en GND {dvdd}
 
 * simulation directives
 .option wnflag=1
+.options gmin=1e-15 abstol=1p
 .option savecurrents
 .dc Ibias {imin} {imax} {iinc}
 .control
