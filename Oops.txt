@@ -1,0 +1,17 @@
+One more thing …
+I'll have to swiftly ask a question about my Modest Proposal,
+to the bach.ece.jhu.edu [http://bach.ece.jhu.edu/] guy and others (there's a bit of double entendre there) [https://en.wikipedia.org/wiki/Context_collapse#Types_of_context_collapse].
+
+Under the assumption that bad habits are hard to break, and you really want to write a potbox [https://www.youtube.com/watch?v=pHW1I8T0caI], the current bias is something like the ostinato [https://www.youtube.com/watch?v=HtFMxFQrKc4] to that passacaglia [https://www.youtube.com/watch?v=JdxkVQy7QLM].
+
+So it doesn't really make sense to specify the Iref outputs at this time (i.e. in the next 5 hours),
+but to be ready to provide the ibias input required by almost all the other building blocks (with the notable exception of the rheostat) in something like 50 nA elements,
+say, for example, {6,7,23}*I_element [https://www.flickr.com/gp/89067995@N00/M8iV29m5H9],
+as in
+"these reference currents have been brought to you by the elements C, N, and V"
+where the nominally 50 nA I_element may track g_m instead of an absolute value.
+
+Do I still need to make up a more explicit specification of the current bias outputs (by the way, source or sink?) [https://www.youtube.com/watch?v=PcTVkOzrzQs&t=591s], to tickle an audience with longer ears than Gert Cauwenberghs, his first PhD, or the local Nobility?
+
+When the chips are down [https://video.ethz.ch/speakers/lecture/5ec758e1-3d99-442e-a918-d4d9402cbac7.html], the current bias needs to provide I_{ref,source} and I_{ref,sink} to everyone else,
+chaconne à son goût, quod libet [https://www.youtube.com/watch?v=JqqAij9p0YU].
