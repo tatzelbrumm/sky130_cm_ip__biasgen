@@ -92,11 +92,11 @@ lab=avdd}
 N 380 -760 380 -720 {
 lab=Vpc}
 N 780 -640 780 -480 {
-lab=en}
+lab=en[2:1]}
 N 780 -640 820 -640 {
-lab=en}
+lab=en[2:1]}
 N 140 -480 780 -480 {
-lab=en}
+lab=en[2:1]}
 N 860 -860 860 -680 {
 lab=dvdd}
 N 900 -900 900 -680 {
@@ -116,11 +116,11 @@ lab=Vpb}
 N 580 -900 900 -900 {
 lab=avdd}
 N 940 -620 980 -620 {
-lab=vgon}
+lab=vgon[2:1]}
 N 940 -660 980 -660 {
-lab=vgoff}
+lab=vgoff[2:1]}
 N 1040 -560 1040 -520 {
-lab=Iout}
+lab=Iout[2:1]}
 N 1040 -820 1140 -820 {
 lab=Vpb}
 N 1020 -780 1140 -780 {
@@ -180,11 +180,11 @@ C {devices/iopin.sym} 140 -280 0 1 {name=p3 lab=Ibin}
 C {devices/iopin.sym} 1140 -820 0 0 {name=p4 lab=Vpb}
 C {devices/iopin.sym} 1140 -780 0 0 {name=p5 lab=Vpc
 }
-C {devices/iopin.sym} 1040 -520 1 0 {name=p6 lab=Iout}
-C {devices/lab_wire.sym} 960 -660 0 0 {name=p13 lab=vgoff}
-C {devices/lab_wire.sym} 960 -620 0 0 {name=p14 lab=vgon}
-C {xschem/sky130_cm_levelshifter.sym} 880 -640 0 0 {name=xlvl}
+C {devices/iopin.sym} 1040 -520 1 0 {name=p6 lab=Iout[2:1]}
+C {devices/lab_wire.sym} 960 -660 0 0 {name=p13 lab=vgoff[2:1]}
+C {devices/lab_wire.sym} 960 -620 0 0 {name=p14 lab=vgon[2:1]}
+C {xschem/sky130_cm_levelshifter.sym} 880 -640 0 0 {name=xlvl[2:1]}
 C {devices/iopin.sym} 140 -860 0 1 {name=p15 lab=dvdd}
-C {devices/iopin.sym} 140 -480 0 1 {name=p16 lab=en}
+C {devices/iopin.sym} 140 -480 0 1 {name=p16 lab=en[2:1]}
 C {xschem/sky130_cm_sw_psource.sym} 560 -640 0 0 {name=x0 l=\{l\} w=\{w\} nf=\{nf\} lc=\{lc\} wc=\{wc\} nfc=\{nfc\} lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}
-C {xschem/sky130_cm_sw_psource.sym} 1040 -640 0 0 {name=x1 l=\{l\} w=\{w\} nf=\{nf\} lc=\{lc\} wc=\{wc\} nfc=\{nfc\} lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}
+C {xschem/sky130_cm_sw_psource.sym} 1040 -640 0 0 {name=xsrc[2:1] l=\{l\} w=\{w\} nf=\{nf\} lc=\{lc\} wc=\{wc\} nfc=\{nfc\} lon=.5 won=1 nfon=1 loff=.5 woff=1 nfoff=1}

@@ -20,18 +20,18 @@ L 7 -80 20 -60 20 {}
 B 5 17.5 -62.5 22.5 -57.5 {name=avdd dir=inout}
 B 5 77.5 -22.5 82.5 -17.5 {name=Vpb dir=inout}
 B 5 77.5 -2.5 82.5 2.5 {name=Vpc dir=inout}
-B 5 77.5 17.5 82.5 22.5 {name=Iout dir=inout}
+B 5 77.5 17.5 82.5 22.5 {name=Iout[2:1] dir=inout}
 B 5 -82.5 -22.5 -77.5 -17.5 {name=Ibin dir=inout}
 B 5 -2.5 57.5 2.5 62.5 {name=avss dir=inout}
-B 5 -82.5 17.5 -77.5 22.5 {name=en dir=inout}
+B 5 -82.5 17.5 -77.5 22.5 {name=en[2:1] dir=inout}
 B 5 -22.5 -62.5 -17.5 -57.5 {name=dvdd dir=inout}
 T {@symname} -62.5 -16 0 0 0.3 0.3 {}
 T {@name} 25 -72 0 0 0.2 0.2 {}
 T {avdd} 5 -54 0 0 0.2 0.2 {}
 T {Vpb} 55 -24 0 1 0.2 0.2 {}
 T {Vpc} 55 -4 0 1 0.2 0.2 {}
-T {Iout} 55 16 0 1 0.2 0.2 {}
+T {Iout[2:1]} 55 16 0 1 0.2 0.2 {}
 T {Ibin} -55 -24 0 0 0.2 0.2 {}
 T {avss} 15 54 2 0 0.2 0.2 {}
-T {en} -55 16 0 0 0.2 0.2 {}
+T {en[2:1]} -55 16 0 0 0.2 0.2 {}
 T {dvdd} -35 -54 0 0 0.2 0.2 {}
