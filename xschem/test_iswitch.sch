@@ -102,6 +102,7 @@ C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value=
 .param rload  = 100k
 .param vofs   = 1
 * simulation parameters
+.param celsius = -40
 .param imin   = 100n
 .param imax   = 1u
 .param wait   = 100u
@@ -137,6 +138,7 @@ C {devices/code_shown.sym} 80 -890 0 0 {name=NGSPICE only_toplevel=true value="*
 .option wnflag=1
 .options gmin=1e-15 abstol=1p
 .option savecurrents
+.temp \{celsius\}
 .tran \{tres\} \{2*cycle\} \{tres\}
 .control
 save all
