@@ -1,0 +1,18 @@
+** sch_path: /home/cmaier/EDA/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/sky130_cm_sw_psource.sch
+**.subckt sky130_cm_sw_psource avdd offb Vpb onb Vpc Iout
+*.iopin avdd
+*.iopin Vpb
+*.iopin Vpc
+*.iopin Iout
+*.iopin offb
+*.iopin onb
+XMc2 Iout vsw vd avdd sky130_fd_pr__pfet_g5v0d10v5 L={lc} W={wc} nf={nfc} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 vd Vpb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={l} W={w} nf={nf} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMon Vpc onb vsw avdd sky130_fd_pr__pfet_g5v0d10v5 L={lon} W={won} nf={nfon} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XMoff vsw offb avdd avdd sky130_fd_pr__pfet_g5v0d10v5 L={loff} W={woff} nf={nfoff} ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+**.ends
+.end
