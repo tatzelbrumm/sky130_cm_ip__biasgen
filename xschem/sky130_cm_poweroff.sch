@@ -48,11 +48,11 @@ lab=Ibin}
 N 620 -340 730 -340 {
 lab=Ibin}
 N 710 -460 820 -460 {
-lab=Iout}
+lab=Ibout}
 N 820 -460 820 -340 {
-lab=Iout}
+lab=Ibout}
 N 790 -340 820 -340 {
-lab=Iout}
+lab=Ibout}
 N 140 -860 340 -860 {
 lab=dvdd}
 N 760 -900 940 -900 {
@@ -60,7 +60,7 @@ lab=avdd}
 N 960 -900 1100 -900 {
 lab=avdd}
 N 1100 -340 1140 -340 {
-lab=Iout}
+lab=Ibout}
 N 140 -220 300 -220 {
 lab=en}
 N 680 -140 1100 -140 {
@@ -68,11 +68,11 @@ lab=avss}
 N 360 -180 360 -140 {
 lab=avss}
 N 1100 -340 1100 -230 {
-lab=Iout}
+lab=Ibout}
 N 1100 -170 1100 -140 {
 lab=avss}
 N 820 -340 1100 -340 {
-lab=Iout}
+lab=Ibout}
 N 1100 -200 1120 -200 {
 lab=avss}
 N 1120 -200 1120 -140 {
@@ -138,21 +138,21 @@ spiceprefix=X
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 680 -480 1 0 {name=Mnt
 L=\{lnt\}
 W=\{wnt\}
-nf=\{nft\} mult=1
+nf=\{nfnt\} mult=1
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 920 -780 0 0 {name=Mpuc
 L=\{lpu\}
 W=\{wpu\}
-nf=\{npu\} mult=1
+nf=\{nfpu\} mult=1
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1080 -780 0 0 {name=Mpub
 L=\{lpu\}
 W=\{wpu\}
-nf=\{npu\} mult=1
+nf=\{nfpu\} mult=1
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
