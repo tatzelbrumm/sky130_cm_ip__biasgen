@@ -7,9 +7,9 @@ S {}
 E {}
 N 1200 -140 1300 -140 {
 lab=GND}
-N 1200 -440 1200 -420 {
+N 1200 -320 1200 -300 {
 lab=res}
-N 1300 -440 1300 -420 {
+N 1300 -320 1300 -300 {
 lab=ofs}
 N 1000 -140 1080 -140 {
 lab=GND}
@@ -55,17 +55,13 @@ N 720 -320 720 -240 {
 lab=en[2:1]}
 N 720 -320 800 -320 {
 lab=en[2:1]}
-N 1200 -360 1200 -140 {
-lab=GND}
-N 1300 -360 1300 -140 {
-lab=GND}
 N 1000 -200 1000 -140 {
 lab=GND}
 N 880 -140 1000 -140 {
 lab=GND}
 N 460 -140 540 -140 {
 lab=GND}
-N 540 -140 720 -140 {
+N 640 -140 720 -140 {
 lab=GND}
 N 1080 -160 1080 -140 {
 lab=GND}
@@ -81,6 +77,12 @@ N 640 -340 640 -240 {
 lab=poweron}
 N 640 -340 800 -340 {
 lab=poweron}
+N 1200 -240 1200 -140 {
+lab=GND}
+N 540 -140 640 -140 {
+lab=GND}
+N 1300 -240 1300 -140 {
+lab=GND}
 C {devices/title.sym} 160 -40 0 0 {name=l1 author="Christoph Maier"}
 C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value="* device parameters
 .param l      = 8
@@ -102,19 +104,20 @@ C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value=
 .param rload  = 100k
 .param vofs   = 1
 * simulation parameters
+.param celsius = 85
 .param imin   = 50n
 .param imax   = 1u
 .param iinc   = 50n"}
 C {devices/gnd.sym} 460 -120 0 0 {name=l2 lab=GND}
 C {devices/vsource.sym} 460 -210 0 0 {name=Vdda value=\{avdd\} savecurrent=true}
 C {devices/isource.sym} 720 -430 0 1 {name=Ibias value=\{ibias\}}
-C {devices/vsource.sym} 1200 -390 0 0 {name=Vres value=\{rload\} savecurrent=false}
+C {devices/vsource.sym} 1200 -270 0 0 {name=Vres value=\{rload\} savecurrent=false}
 C {devices/asrc.sym} 1000 -230 0 0 {name=Bload1 function="i=(v(out[1])-v(ofs))/v(res)"}
-C {devices/lab_pin.sym} 1200 -440 0 1 {name=l5 lab=res}
+C {devices/lab_pin.sym} 1200 -320 0 1 {name=l5 lab=res}
 C {devices/lab_wire.sym} 560 -620 0 1 {name=p7 lab=vdda
 }
-C {devices/vsource.sym} 1300 -390 0 0 {name=Vofs value=\{vofs\} savecurrent=false}
-C {devices/lab_pin.sym} 1300 -440 0 1 {name=l4 lab=ofs}
+C {devices/vsource.sym} 1300 -270 0 0 {name=Vofs value=\{vofs\} savecurrent=false}
+C {devices/lab_pin.sym} 1300 -320 0 1 {name=l4 lab=ofs}
 C {devices/code.sym} 30 -220 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -128,6 +131,7 @@ C {devices/code_shown.sym} 80 -890 0 0 {name=NGSPICE only_toplevel=true value="*
 .option wnflag=1
 .options gmin=1e-15 abstol=1p
 .option savecurrents
+.temp \{celsius\}
 .dc Ibias \{imin\} \{imax\} \{iinc\}
 .control
 save all
