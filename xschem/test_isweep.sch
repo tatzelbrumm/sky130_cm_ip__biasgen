@@ -75,6 +75,12 @@ N 1000 -310 1000 -260 {
 lab=out[1]}
 N 960 -320 1070 -320 {
 lab=out[2:1]}
+N 640 -180 640 -140 {
+lab=GND}
+N 640 -340 640 -240 {
+lab=poweron}
+N 640 -340 800 -340 {
+lab=poweron}
 C {devices/title.sym} 160 -40 0 0 {name=l1 author="Christoph Maier"}
 C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value="* device parameters
 .param l      = 8
@@ -137,7 +143,7 @@ write test_isweep.raw
 C {devices/lab_wire.sym} 770 -360 0 0 {name=p3 lab=in}
 C {devices/lab_pin.sym} 1040 -360 0 1 {name=l6 lab=vpb}
 C {devices/lab_pin.sym} 1040 -340 0 1 {name=l7 lab=vpc}
-C {xschem/sky130_cm_ip__biasgen.sym} 880 -340 0 0 {name=xDUT l=8 w=2 nf=1 lc=0.5 wc=2 nfc=1 lb=18 wb=1 nfb=1 lnmos=8 wnmos=2 nfnmos=1}
+C {xschem/sky130_cm_ip__biasgen.sym} 880 -340 0 0 {name=xDUT l=\{l\} w=\{w\} nf=\{nf\} lc=\{lc\} wc=\{wc\} nfc=\{nfc\} lb=\{lb\} wb=\{wb\} nfb=\{nfb\} lnmos=\{lnmos\} wnmos=\{wnmos\} nfnmos=\{nfnmos\}}
 C {devices/vsource.sym} 540 -210 0 0 {name=Vddd value=\{dvdd\} savecurrent=true}
 C {devices/lab_wire.sym} 560 -580 0 1 {name=p1 lab=vddd
 }
@@ -147,3 +153,5 @@ C {devices/lab_wire.sym} 1030 -320 0 0 {name=p4 lab=out[2:1]}
 C {devices/bus_tap.sym} 990 -320 1 0 {name=l8 lab=[1]}
 C {devices/asrc.sym} 1080 -190 0 0 {name=Bload2 function="i=(v(out[2])-v(ofs))/v(res)"}
 C {devices/bus_tap.sym} 1070 -320 1 0 {name=l10 lab=[2]}
+C {devices/vsource.sym} 640 -210 0 0 {name=Vpoweron value=\{dvdd\} savecurrent=true}
+C {devices/lab_wire.sym} 770 -340 0 0 {name=p5 lab=poweron}
