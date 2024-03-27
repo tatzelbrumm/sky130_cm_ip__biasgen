@@ -1,0 +1,24 @@
+******
+** ngspice-42 : Circuit level simulation program
+** Compiled with Sparse Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Mar 10 02:59:47 UTC 2024
+******
+||: No such file or directory
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/cmaier/eda/efabless/chipalooza2024/sky130_cm_ip__biasgen/xschem/test_isweep.sch
+
+Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
+
+ Reference value :  5.00000e-08
+No. of Data Rows : 20
+binary raw file "test_isweep.raw"
+ngspice 50 -> 
+
