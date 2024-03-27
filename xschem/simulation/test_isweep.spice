@@ -40,6 +40,7 @@ Vpoweron poweron GND {dvdd}
 .param rload  = 100k
 .param vofs   = 1
 * simulation parameters
+.param celsius = 85
 .param imin   = 50n
 .param imax   = 1u
 .param iinc   = 50n
@@ -54,6 +55,7 @@ Vpoweron poweron GND {dvdd}
 .option wnflag=1
 .options gmin=1e-15 abstol=1p
 .option savecurrents
+.temp {celsius}
 .dc Ibias {imin} {imax} {iinc}
 .control
 save all
