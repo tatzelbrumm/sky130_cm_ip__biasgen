@@ -27,7 +27,7 @@ Vpoweron poweron GND {dvdd}
 .param lc     = 0.5
 .param wc     = 2
 .param nfc    = 1
-.param lb     = 18
+.param lb     = 8
 .param wb     = 1
 .param nfb    = 1
 .param lnmos  = 8
@@ -36,18 +36,18 @@ Vpoweron poweron GND {dvdd}
 * instrumentation parameters
 .param avdd   = 3.3
 .param dvdd   = 1.8
-.param ibias  = 50n
+.param ibias  = 200n
 .param rload  = 100k
 .param vofs   = 1
 * simulation parameters
-.param celsius = 85
+.param celsius = -40
 .param imin   = 50n
 .param imax   = 1u
 .param iinc   = 50n
 
 
 ** opencircuitdesign pdks install
-.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice ss
 
 
 
