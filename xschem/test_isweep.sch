@@ -91,7 +91,7 @@ C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value=
 .param lc     = 0.5
 .param wc     = 2
 .param nfc    = 1
-.param lb     = 18
+.param lb     = 8
 .param wb     = 1
 .param nfb    = 1
 .param lnmos  = 8
@@ -100,11 +100,11 @@ C {devices/code_shown.sym} 1120 -890 0 0 {name=params only_toplevel=false value=
 * instrumentation parameters
 .param avdd   = 3.3
 .param dvdd   = 1.8
-.param ibias  = 50n
+.param ibias  = 200n
 .param rload  = 100k
 .param vofs   = 1
 * simulation parameters
-.param celsius = 85
+.param celsius = -40
 .param imin   = 50n
 .param imax   = 1u
 .param iinc   = 50n"}
@@ -118,12 +118,12 @@ C {devices/lab_wire.sym} 560 -620 0 1 {name=p7 lab=vdda
 }
 C {devices/vsource.sym} 1300 -270 0 0 {name=Vofs value=\{vofs\} savecurrent=false}
 C {devices/lab_pin.sym} 1300 -320 0 1 {name=l4 lab=ofs}
-C {devices/code.sym} 30 -220 0 0 {name=TT_MODELS
+C {devices/code.sym} 30 -220 0 0 {name=ss_MODELS
 only_toplevel=true
 format="tcleval( @value )"
 value="
 ** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
+.lib $::SKYWATER_MODELS/sky130.lib.spice ss
 
 "
 spice_ignore=false}
